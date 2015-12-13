@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- label name -->
+    <TextView
+        android:id="@+id/sched_label_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:text="Name" />
+    <EditText
+        android:id="@+id/sched_edit_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:marqueeRepeatLimit="marquee_forever"/>
+
+
+    <!-- image -->
+    <TextView
+        android:id="@+id/cover_label_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:text="Cover" />
+    <EditText
+        android:id="@+id/cover_edit_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:marqueeRepeatLimit="marquee_forever"/>
+
+    <!-- datetime -->
+    <TextView
+        android:id="@+id/starttime_label_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:background="@color/tl_background"
+        android:text="Start Time" />
+    <EditText
+        android:id="@+id/starttime_edit_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:marqueeRepeatLimit="marquee_forever"/>
+
+    <TextView
+        android:id="@+id/endtime_label_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:background="@color/tl_background"
+        android:text="Start Time" />
+    <EditText
+        android:id="@+id/endtime_edit_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:marqueeRepeatLimit="marquee_forever"/>
+
+</LinearLayout>

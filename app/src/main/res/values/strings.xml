@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Storyveller</string>
+
+    <string name="hello_world">Hello world Guys!</string>
+    <string name="action_settings">Settings</string>
+
+
+
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_friends">Friends</string>
+    <string name="nav_item_notifications">Messages</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+
+    <string name="title_messages">Messages</string>
+    <string name="title_articles">Articles</string>
+    <string name="title_timeline">Timeline</string>
+
+    <!-- Font Awesome for android -->
+    <string name="fa_edit">&#xf044;</string>
+    <string name="fa_map">&#xf041;</string>
+
+    <!-- Map credentials -->
+    <string name="map_google_token">AIzaSyAm3BoyJm8FZx6VR3dHDp4lkBqKqy822t8</string>
+    <string name="map_box_token">pk.eyJ1IjoiYXJ5Y2FuY2VyIiwiYSI6ImNpZXV2c2x3bTBydHRseG0zMHUydXg0dGUifQ.opTrquN9YMHQosjy5Ig4kw</string>
+</resources>

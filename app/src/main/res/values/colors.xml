@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#434c50</color>
+    <color name="colorPrimaryDark">#273135</color>
+    <color name="colorAccent">#1f566e</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+
+    <color name="fab_colorNormal">#4eb31f</color>
+    <color name="fab_colorPressed">#01710e</color>
+    <color name="fab_colorRipple">#1f566e</color>
+
+    <!-- Timeline -->
+    <color name="tl_background">#e5ebec</color>
+    <color name="tl_vertical_line">#7f8283</color>
+    <color name="navigationBarColor">#273135</color>
+</resources>

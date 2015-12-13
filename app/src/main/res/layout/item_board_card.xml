@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/tl_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            card_view:cardCornerRadius="3dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="9dp"
+            card_view:cardElevation="0.01dp"
+            android:layout_marginBottom="0dp">
+            <RelativeLayout
+                android:id="@+id/top_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="250dp">
+
+                <ImageView
+                    android:id="@+id/img_thumbnail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/grand_canyon"
+                    android:layout_marginBottom="50dp"/>
+
+                <LinearLayout
+                    android:id="@+id/trip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:layout_alignBottom="@+id/img_thumbnail"
+                    android:background="#5C1b1b1b" >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/ic_sample" />
+                    <TextView
+                        android:id="@+id/trip_title"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        android:layout_gravity="bottom"
+                        android:gravity="center_vertical"
+                        android:alpha="0.8"
+                        android:paddingBottom="5dp"
+                        android:layout_alignBottom="@+id/img_thumbnail"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                        android:text="Test" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/trip"
+                    android:orientation="horizontal">
+
+
+
+                    <TextView
+                        android:id="@+id/trip_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="15dp"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        android:alpha="0.8"
+                        android:textColor="#ff272727"
+                        android:textStyle="bold"
+                        android:text="IDR 5000,00"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true" />
+
+                    <TextView
+                        android:id="@+id/trip_follower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingTop="15dp"
+                        android:alpha="0.8"
+                        android:textColor="#939292"
+                        android:textStyle="italic"
+                        android:text="- 5 Joins"
+                        android:layout_alignRight="@+id/trip_description"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center_vertical"
+                        android:padding="5dp"
+                        android:layout_weight="1">
+
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/circle_small_orange"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="March'12 2015"
+                            android:textSize="10sp"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>

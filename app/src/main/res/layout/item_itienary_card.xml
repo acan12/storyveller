@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/container_item"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/item"
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:id="@+id/item_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:background="@color/tl_vertical_line" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="10.5dp"
+                        android:src="@drawable/circle_orange_solid"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/item_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_weight="2"
+                    android:paddingBottom="20dp"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/border_bottom_layout"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/item_info_header"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp" >
+
+                        <TextView
+                            android:id="@+id/info_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:text="Diving in Bali"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <TextView
+                            android:id="@+id/info_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/darker_gray"
+                            android:textStyle="italic"
+                            android:text="today"
+                            android:layout_marginRight="5dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                    <TextView
+                        android:id="@+id/item_info_description"
+                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@android:color/black"
+                        android:text="sdsdsd sd s ds d sd s ds d sd s ds d sdsd Plainning at noon will arrive soon at 5pm in local time. dsadsdasd sa das d sa das dasdasdasd dksajdklasj dkasjdlksaj dljasld asldjasljd lkas"
+                        android:layout_below="@+id/trip_title"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <LinearLayout
+                        android:id="@+id/item_info_images"
+                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:paddingBottom="20dp"
+                        android:scrollbars="horizontal"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:src="@mipmap/ic_sample"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:src="@mipmap/ic_sample"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:src="@mipmap/ic_sample"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:src="@mipmap/ic_sample"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:src="@mipmap/ic_sample"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:src="@mipmap/ic_sample"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:src="@mipmap/ic_sample"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
