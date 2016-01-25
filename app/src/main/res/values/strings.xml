@@ -32,4 +32,11 @@
     <!-- Map credentials -->
     <string name="map_google_token">AIzaSyAm3BoyJm8FZx6VR3dHDp4lkBqKqy822t8</string>
     <string name="map_box_token">pk.eyJ1IjoiYXJ5Y2FuY2VyIiwiYSI6ImNpZXV2c2x3bTBydHRseG0zMHUydXg0dGUifQ.opTrquN9YMHQosjy5Ig4kw</string>
+
+    <string-array name="list_of_category">
+        <item>Sport</item>
+        <item>Vacation</item>
+        <item>Business</item>
+        <item>Social</item>
+    </string-array>
 </resources>

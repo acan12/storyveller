@@ -5,7 +5,7 @@
 
     <!-- label name -->
     <TextView
-        android:id="@+id/sched_label_name"
+        android:id="@+id/schedule_label_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -13,7 +13,7 @@
         android:layout_marginRight="8dip"
         android:text="Name" />
     <EditText
-        android:id="@+id/sched_edit_name"
+        android:id="@+id/schedule_edit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
@@ -22,59 +22,72 @@
         android:marqueeRepeatLimit="marquee_forever"/>
 
 
-    <!-- image -->
+    <!-- categories -->
     <TextView
-        android:id="@+id/cover_label_name"
+        android:id="@+id/categories_label_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="8dip"
         android:layout_marginRight="8dip"
-        android:text="Cover" />
-    <EditText
-        android:id="@+id/cover_edit_name"
+        android:text="Category" />
+    <Spinner
+        android:id="@+id/categories_spinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
-        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="20dp"
         android:layout_marginRight="10dip"
+        android:background="@drawable/border_spinner"
         android:marqueeRepeatLimit="marquee_forever"/>
 
-    <!-- datetime -->
-    <TextView
-        android:id="@+id/starttime_label_name"
-        android:layout_width="fill_parent"
+    <!-- Start & End datetime -->
+
+    <Button
+        android:id="@+id/date_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="8dip"
-        android:layout_marginRight="8dip"
-        android:background="@color/tl_background"
-        android:text="Start Time" />
-    <EditText
-        android:id="@+id/starttime_edit_name"
-        android:layout_width="fill_parent"
+        android:text="Pick Date" />
+
+    <Button
+        android:id="@+id/time_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-        android:marqueeRepeatLimit="marquee_forever"/>
+        android:text="PICK TIME" />
+
 
     <TextView
-        android:id="@+id/endtime_label_name"
-        android:layout_width="fill_parent"
+        android:id="@+id/date_textview"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="8dip"
-        android:layout_marginRight="8dip"
-        android:background="@color/tl_background"
-        android:text="Start Time" />
-    <EditText
-        android:id="@+id/endtime_edit_name"
-        android:layout_width="fill_parent"
+        android:text=""
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/time_textview"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-        android:marqueeRepeatLimit="marquee_forever"/>
+        android:text=""
+        android:layout_marginTop="10dp" />
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/endtime_label_name"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginLeft="8dip"-->
+        <!--android:layout_marginRight="8dip"-->
+        <!--android:background="@color/tl_background"-->
+        <!--android:text="Start Time" />-->
+    <!--<EditText-->
+        <!--android:id="@+id/endtime_edit_name"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:singleLine="true"-->
+        <!--android:layout_marginLeft="10dip"-->
+        <!--android:layout_marginRight="10dip"-->
+        <!--android:marqueeRepeatLimit="marquee_forever"/>-->
 
 </LinearLayout>

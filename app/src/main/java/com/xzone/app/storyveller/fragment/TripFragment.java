@@ -15,7 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.melnykov.fab.FloatingActionButton;
 import com.xzone.app.storyveller.DetailActivity;
+import com.xzone.app.storyveller.FormActivity;
 import com.xzone.app.storyveller.R;
 import com.xzone.app.storyveller.adapter.BoardAdapter;
 
@@ -44,7 +46,7 @@ public class TripFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_articles, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_trips, container, false);
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -72,6 +74,17 @@ public class TripFragment extends BaseFragment {
 
         mAdapter = new BoardAdapter();
         mRecyclerView.setAdapter(mAdapter);
+
+        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+        fab.attachToRecyclerView(mRecyclerView);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FormActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         return rootView;
     }

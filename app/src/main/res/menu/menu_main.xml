@@ -4,19 +4,19 @@
     tools:context=".MainActivity">
 
 
-    <item
-        android:id="@+id/all_trip"
-        android:title="All"
-        android:orderInCategory="100"
-        android:icon="@drawable/trash"
-        app:showAsAction="always" />
+    <!--<item-->
+        <!--android:id="@+id/all_trip"-->
+        <!--android:title="All"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:icon="@drawable/trash"-->
+        <!--app:showAsAction="always" />-->
 
-    <item
-        android:id="@+id/edit_trip"
-        android:title="Edit"
-        android:orderInCategory="100"
-        android:icon="@drawable/trash"
-        app:showAsAction="always" />
+    <!--<item-->
+        <!--android:id="@+id/edit_trip"-->
+        <!--android:title="Edit"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:icon="@drawable/trash"-->
+        <!--app:showAsAction="always" />-->
 
     <item
         android:id="@+id/action_search"

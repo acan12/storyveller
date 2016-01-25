@@ -1,21 +1,23 @@
 package com.xzone.app.storyveller;
 
-import android.graphics.drawable.Drawable;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
+import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import com.xzone.app.storyveller.fragment.ScheduleFormFragment;
-import com.xzone.app.storyveller.fragment.TimelineFragment;
 
 /**
  * Created by arysuryawan on 11/3/15.
  */
-public class FormActivity extends AppCompatActivity {
+public class FormActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener{
 
     private Toolbar mToolbar;
 
@@ -34,12 +36,13 @@ public class FormActivity extends AppCompatActivity {
         Fragment fragment = new ScheduleFormFragment();
 
         if (fragment != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_body, fragment);
             fragmentTransaction.commit();
 
         }
+
     }
 
     @Override
@@ -49,4 +52,20 @@ public class FormActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        String date = "Start Date: From - "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
+        Button date_button = (Button) this.findViewById(R.id.date_button);
+        date_button.setText(date);
+    }
+
+    @Override
+    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute, int second) {
+        String hourString = hourOfDay < 10 ? "0"+hourOfDay : ""+hourOfDay;
+        String minuteString = minute < 10 ? "0"+minute : ""+minute;
+        String time = "Start Time: From - "+hourString+"h"+minuteString;
+
+        Button time_button = (Button) this.findViewById(R.id.time_button);
+        time_button.setText(time);
+    }
 }
