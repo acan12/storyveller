@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -70,7 +71,6 @@ public class TimelineFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
 
 
-
         // using pull_to_refresh
         swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_layout);
         swipeRefreshLayout.setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW);
@@ -99,13 +99,13 @@ public class TimelineFragment extends Fragment {
             @Override
             public void onMenuExpanded() {
                 backgroundFabMenus.setVisibility(View.VISIBLE);
-                mRecyclerView.stopScroll();
+                mRecyclerView.setLayoutFrozen(true);
             }
 
             @Override
             public void onMenuCollapsed() {
                 backgroundFabMenus.setVisibility(View.GONE);
-                swipeRefreshLayout.setEnabled(false);
+                mRecyclerView.setLayoutFrozen(false);
             }
         });
 

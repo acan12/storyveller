@@ -1,93 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:fillViewport="false">
 
-    <!-- label name -->
-    <TextView
-        android:id="@+id/schedule_label_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="8dip"
-        android:layout_marginRight="8dip"
-        android:text="Name" />
-    <EditText
-        android:id="@+id/schedule_edit"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-        android:marqueeRepeatLimit="marquee_forever"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <!-- label name -->
+        <TextView
+            android:id="@+id/schedule_label_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:text="Schedule Name" />
 
-    <!-- categories -->
-    <TextView
-        android:id="@+id/categories_label_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="8dip"
-        android:layout_marginRight="8dip"
-        android:text="Category" />
-    <Spinner
-        android:id="@+id/categories_spinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_marginTop="10dp"
-        android:paddingBottom="20dp"
-        android:layout_marginRight="10dip"
-        android:background="@drawable/border_spinner"
-        android:marqueeRepeatLimit="marquee_forever"/>
+        <EditText
+            android:id="@+id/schedule_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip" />
 
-    <!-- Start & End datetime -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:text="Category" />
 
-    <Button
-        android:id="@+id/date_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pick Date" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight=".28"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/time_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PICK TIME" />
+            <Spinner
+                android:id="@+id/categories_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@drawable/border_spinner"
+                android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:spinnerMode="dropdown" />
 
-
-    <TextView
-        android:id="@+id/date_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginTop="10dp" />
-
-    <TextView
-        android:id="@+id/time_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginTop="10dp" />
+        </RelativeLayout>
 
 
-    <!--<TextView-->
-        <!--android:id="@+id/endtime_label_name"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center_horizontal"-->
-        <!--android:layout_marginLeft="8dip"-->
-        <!--android:layout_marginRight="8dip"-->
-        <!--android:background="@color/tl_background"-->
-        <!--android:text="Start Time" />-->
-    <!--<EditText-->
-        <!--android:id="@+id/endtime_edit_name"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:singleLine="true"-->
-        <!--android:layout_marginLeft="10dip"-->
-        <!--android:layout_marginRight="10dip"-->
-        <!--android:marqueeRepeatLimit="marquee_forever"/>-->
 
-</LinearLayout>
+
+
+        <!-- Start & End datetime -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:text="Start" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="left">
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/date_start_button"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:bootstrapBrand="success"
+                app:bootstrapText="Date"
+                app:buttonMode="regular"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/time_start_button"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:bootstrapBrand="success"
+                app:bootstrapText="Time"
+                app:buttonMode="regular"
+                app:showOutline="false"
+                app:roundedCorners="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:text="End" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="left">
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/date_end_button"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:bootstrapBrand="primary"
+                app:bootstrapText="Date"
+                app:buttonMode="regular"
+                app:showOutline="false"
+                app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/time_end_button"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:bootstrapBrand="primary"
+                app:bootstrapText="Time"
+                app:buttonMode="regular"
+                app:showOutline="false"
+                app:roundedCorners="true" />
+
+        </LinearLayout>
+
+
+
+
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/endtime_label_name"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginLeft="8dip"-->
+            <!--android:layout_marginRight="8dip"-->
+            <!--android:background="@color/tl_background"-->
+            <!--android:text="Start Time" />-->
+        <!--<EditText-->
+            <!--android:id="@+id/endtime_edit_name"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:singleLine="true"-->
+            <!--android:layout_marginLeft="10dip"-->
+            <!--android:layout_marginRight="10dip"-->
+            <!--android:marqueeRepeatLimit="marquee_forever"/>-->
+
+    </LinearLayout>
+</ScrollView>

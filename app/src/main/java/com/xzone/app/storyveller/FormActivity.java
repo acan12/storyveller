@@ -6,9 +6,10 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
-import android.widget.Button;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
@@ -54,9 +55,23 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        String date = "Start Date: From - "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
-        Button date_button = (Button) this.findViewById(R.id.date_button);
-        date_button.setText(date);
+        String date = "";
+//        BootstrapButton date_button = (DatePickerDialog) view;
+//        switch(view.getId()){
+//            case R.id.date_start_button :
+//                date = "Start at "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
+//                date_button = (BootstrapButton) this.findViewById(R.id.date_start_button);
+//                break;
+//            case R.id.date_end_button :
+//                date = "End at "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
+//                date_button = (BootstrapButton) this.findViewById(R.id.date_end_button);
+//                break;
+//            default :
+//                date = "Start Date";
+//        }
+
+
+//        date_button.setText(date);
     }
 
     @Override
@@ -65,7 +80,7 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
         String minuteString = minute < 10 ? "0"+minute : ""+minute;
         String time = "Start Time: From - "+hourString+"h"+minuteString;
 
-        Button time_button = (Button) this.findViewById(R.id.time_button);
+        BootstrapButton time_button = (BootstrapButton) this.findViewById(R.id.time_start_button);
         time_button.setText(time);
     }
 }
