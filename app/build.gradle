@@ -21,6 +21,9 @@ android {
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
 }
 
 android{
@@ -50,7 +53,8 @@ android{
 
         // date time range picker
         compile 'com.wdullaer:materialdatetimepicker:2.1.1'
-//        compile 'com.borax12.materialdaterangepicker:library:1.2'
+        compile 'com.github.fcannizzaro:material-stepper:7d266cbe2d'
+
 
 
 

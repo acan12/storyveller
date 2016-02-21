@@ -16,7 +16,7 @@
             android:layout_height="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="5dp"
-            android:background="@drawable/circle_small_orange"
+            android:background="@drawable/circle_big_orange"
             />
 
         <TextView

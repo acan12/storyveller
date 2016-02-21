@@ -20,6 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
+            android:textColor="@color/material_blue_500"
             android:text="Schedule Name" />
 
         <EditText
@@ -36,6 +37,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
+            android:textColor="@color/material_blue_500"
             android:text="Category" />
 
         <RelativeLayout
@@ -70,7 +72,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
-            android:text="Start" />
+            android:textColor="@color/material_blue_500"
+            android:text="Start to" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,7 +110,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
-            android:text="End" />
+            android:textColor="@color/material_blue_500"
+            android:text="End to" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

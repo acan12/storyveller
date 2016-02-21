@@ -54,25 +54,7 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
     }
 
     @Override
-    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        String date = "";
-//        BootstrapButton date_button = (DatePickerDialog) view;
-//        switch(view.getId()){
-//            case R.id.date_start_button :
-//                date = "Start at "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
-//                date_button = (BootstrapButton) this.findViewById(R.id.date_start_button);
-//                break;
-//            case R.id.date_end_button :
-//                date = "End at "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
-//                date_button = (BootstrapButton) this.findViewById(R.id.date_end_button);
-//                break;
-//            default :
-//                date = "Start Date";
-//        }
-
-
-//        date_button.setText(date);
-    }
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {}
 
     @Override
     public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute, int second) {
