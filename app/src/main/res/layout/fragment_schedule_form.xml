@@ -16,59 +16,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_margin="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:background="@drawable/border_bottom_layout">
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
 
             <ImageView
-                android:layout_width="40dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:src="@drawable/circle_big_orange"/>
+                android:src="@drawable/circle_big_gray"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Schedule"/>
-        </LinearLayout>
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/mdtp_white"
+                android:textSize="25dp"
+                android:text="S"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:orientation="vertical" >
+            android:layout_weight="1"
+            android:orientation="horizontal" >
             <ImageView
-                android:layout_width="40dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:src="@drawable/circle_big_blue"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Itienary"/>
-        </LinearLayout>
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/mdtp_white"
+                android:textSize="25dp"
+                android:text="I"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:orientation="vertical">
-
+            android:layout_weight="1"
+            android:orientation="horizontal" >
             <ImageView
-                android:layout_width="40dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:src="@drawable/circle_big_green"/>
+                android:src="@drawable/circle_big_orange"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Publish"/>
-        </LinearLayout>
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/mdtp_white"
+                android:textSize="25dp"
+                android:text="P"/>
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 
