@@ -1,6 +1,7 @@
 package com.xzone.app.storyveller;
 
 import android.app.Fragment;
+
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -8,12 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
+import com.xzone.app.storyveller.fragment.ItineraryFormFragment;
+import com.xzone.app.storyveller.fragment.MapBoxFragment;
 import com.xzone.app.storyveller.fragment.ScheduleFormFragment;
+import com.xzone.app.storyveller.fragment.TimelineFragment;
 
 /**
  * Created by arysuryawan on 11/3/15.
@@ -21,6 +26,7 @@ import com.xzone.app.storyveller.fragment.ScheduleFormFragment;
 public class FormActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener{
 
     private Toolbar mToolbar;
+    private Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +40,7 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
         // show back actionbar button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Fragment fragment = new ScheduleFormFragment();
+        fragment = new ScheduleFormFragment();
 
         if (fragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
@@ -51,6 +57,37 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_form, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+
+
+
+
+        if(id == R.id.action_ok) {
+
+            Fragment fragment = new ItineraryFormFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_body, fragment);
+            fragmentTransaction.commit();
+
+        }else if(id == R.id.action_cancel) {
+            fragment = new ScheduleFormFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_body, fragment);
+            fragmentTransaction.commit();
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

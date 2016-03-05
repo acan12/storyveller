@@ -3,9 +3,9 @@ package com.xzone.app.storyveller.fragment;
 //import android.support.v4.app.Fragment;
 //import android.support.v4.app.FragmentManager;
 //import android.support.v4.app.FragmentTransaction;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+
 import android.annotation.TargetApi;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
@@ -31,7 +31,7 @@ import java.util.Calendar;
 /**
  * Created by arysuryawan on 11/18/15.
  */
-public class ScheduleFormFragment extends Fragment {
+public class ItineraryFormFragment extends Fragment {
 
 
     private final String[] labels = {"Schedule", "Itienary", "Publish"};
@@ -54,19 +54,11 @@ public class ScheduleFormFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_schedule_form, container, false);
-
-//        StepsView mStepsView = (StepsView) rootView.findViewById(R.id.stepsView);
-//        mStepsView.setLabels(labels)
-//                .setBarColorIndicator(
-//                        this.getResources().getColor(R.color.bootstrap_brand_primary))
-//                .setProgressColorIndicator(this.getResources().getColor(R.color.orange))
-//                .setLabelColorIndicator(this.getResources().getColor(R.color.orange))
-//                .drawView();
+        final View rootView = inflater.inflate(R.layout.fragment_itinerary_form, container, false);
 
 
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.categories_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.list_of_category, android.R.layout.simple_spinner_item);
+        Spinner spinner = (Spinner) rootView.findViewById(R.id.transportation_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.list_of_transportation, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 

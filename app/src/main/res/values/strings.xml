@@ -39,4 +39,13 @@
         <item>Business</item>
         <item>Social</item>
     </string-array>
+
+    <string-array name="list_of_transportation">
+        <item>Walk</item>
+        <item>Car</item>
+        <item>Bus</item>
+        <item>Train</item>
+        <item>Flight</item>
+        <item>Boat</item>
+    </string-array>
 </resources>
