@@ -48,15 +48,15 @@ android{
         compile 'com.jakewharton:butterknife:7.0.1'
 
         compile 'com.beardedhen:androidbootstrap:2.0.0'
-        compile 'com.anton46:stepsview:0.0.2'
+//        compile 'com.anton46:stepsview:0.0.2'
 //        compile 'com.github.tittojose:timerangepicker-library:0.2'
 
         // date time range picker
         compile 'com.wdullaer:materialdatetimepicker:2.1.1'
-        compile 'com.github.fcannizzaro:material-stepper:7d266cbe2d'
+//        compile 'com.github.fcannizzaro:material-stepper:7d266cbe2d'
 
-
-
+        compile 'com.github.rey5137:material:1.2.2'
+//        compile 'com.github.kingideayou:SlideBottomPanel:1.0.6'
 
         // mapbox library for android
 //    compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:2.1.0@aar') {

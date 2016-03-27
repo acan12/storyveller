@@ -4,6 +4,7 @@ package com.xzone.app.storyveller.fragment;
 //import android.support.v4.app.FragmentManager;
 //import android.support.v4.app.FragmentTransaction;
 
+import com.xzone.app.storyveller.component.PanelButton;
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.content.Context;
@@ -11,11 +12,15 @@ import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -24,6 +29,7 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import com.xzone.app.storyveller.R;
+import com.xzone.app.storyveller.adapter.ItienaryAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -31,11 +37,19 @@ import java.util.Calendar;
 /**
  * Created by arysuryawan on 11/18/15.
  */
-public class ItineraryFormFragment extends Fragment {
+public class FormPlanFragment extends Fragment implements View.OnClickListener{
 
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     private final String[] labels = {"Schedule", "Itienary", "Publish"};
     private EditText et;
+    private Button buttonSlide;
+
+    private static final String SLIDING_FRAGMENT_TAG = "sliding_fragment";
+    private View rootView;
 
 
     @Override
@@ -54,19 +68,35 @@ public class ItineraryFormFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_itinerary_form, container, false);
+        rootView = inflater.inflate(R.layout.fragment_edit_timelines, container, false);
+
+
+
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+
+        mLayoutManager = new LinearLayoutManager(this.getActivity());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mAdapter = new ItienaryAdapter();
+        mRecyclerView.setAdapter(mAdapter);
+
+
+
+        final BootstrapButton dateStartButton = (BootstrapButton) rootView.findViewById(R.id.date_start_button);
+        final BootstrapButton timeStartButton = (BootstrapButton) rootView.findViewById(R.id.time_start_button);
+        final BootstrapButton dateEndButton = (BootstrapButton) rootView.findViewById(R.id.date_end_button);
+        final BootstrapButton timeEndButton = (BootstrapButton) rootView.findViewById(R.id.time_end_button);
+        final BootstrapButton button_schedule = (BootstrapButton) rootView.findViewById(R.id.button_add_schedule);
+        final BootstrapButton button_itienary = (BootstrapButton) rootView.findViewById(R.id.button_add_itienary);
+
+        button_schedule.setOnClickListener(this);
+        button_itienary.setOnClickListener(this);
 
 
         Spinner spinner = (Spinner) rootView.findViewById(R.id.transportation_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.list_of_transportation, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
-        // Find our View instances
-        final BootstrapButton dateStartButton = (BootstrapButton) rootView.findViewById(R.id.date_start_button);
-        final BootstrapButton timeStartButton = (BootstrapButton) rootView.findViewById(R.id.time_start_button);
-        final BootstrapButton dateEndButton = (BootstrapButton) rootView.findViewById(R.id.date_end_button);
-        final BootstrapButton timeEndButton = (BootstrapButton) rootView.findViewById(R.id.time_end_button);
 
 
         // Show a datepicker when the dateButton is clicked - start & end schedule
@@ -109,7 +139,7 @@ public class ItineraryFormFragment extends Fragment {
                         Log.d("TimePicker", "Dialog was cancelled");
                     }
                 });
-                tpd.show( getFragmentManager(), "Timepickerdialog");
+                tpd.show(getFragmentManager(), "Timepickerdialog");
                 tpd.setOnTimeSetListener(new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute, int second) {
@@ -181,8 +211,35 @@ public class ItineraryFormFragment extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button_add_schedule:
+                PanelButton.showPanel(rootView,
+                        R.id.panel_itienary, false);
+                PanelButton.showPanel(rootView,
+                        R.id.panel_schedule, true);
+
+                break;
+            case R.id.button_add_itienary:
+                PanelButton.showPanel(rootView,
+                        R.id.panel_schedule, false);
+                PanelButton.showPanel(rootView,
+                        R.id.panel_itienary, true);
+                break;
+
+            default:
+                PanelButton.showPanel(rootView,
+                        R.id.panel_schedule, false);
+                PanelButton.showPanel(rootView,
+                        R.id.panel_itienary, false);
+        }
 
 
+    }
 
 
 }
+
+
+

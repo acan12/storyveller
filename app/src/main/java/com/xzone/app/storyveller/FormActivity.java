@@ -7,7 +7,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -15,10 +14,7 @@ import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
-import com.xzone.app.storyveller.fragment.ItineraryFormFragment;
-import com.xzone.app.storyveller.fragment.MapBoxFragment;
-import com.xzone.app.storyveller.fragment.ScheduleFormFragment;
-import com.xzone.app.storyveller.fragment.TimelineFragment;
+import com.xzone.app.storyveller.fragment.FormPlanFragment;
 
 /**
  * Created by arysuryawan on 11/3/15.
@@ -40,7 +36,7 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
         // show back actionbar button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        fragment = new ScheduleFormFragment();
+        fragment = new FormPlanFragment();
 
         if (fragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
@@ -72,18 +68,14 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
 
         if(id == R.id.action_ok) {
 
-            Fragment fragment = new ItineraryFormFragment();
+            Fragment fragment = new FormPlanFragment();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_body, fragment);
             fragmentTransaction.commit();
 
         }else if(id == R.id.action_cancel) {
-            fragment = new ScheduleFormFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_body, fragment);
-            fragmentTransaction.commit();
+
         }
 
 
