@@ -91,6 +91,6 @@ public class ItienaryAdapter extends RecyclerView.Adapter<ItienaryAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mItems.size();
     }
 }

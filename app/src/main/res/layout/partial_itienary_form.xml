@@ -18,7 +18,7 @@
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/material_blue_500"
+        android:textColor="@android:color/white"
         android:layout_marginLeft="15dip"
         android:text="Itenary Name" />
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="12dip"
-        android:textColor="@color/material_blue_500"
+        android:textColor="@android:color/white"
         android:text="Transportation" />
 
         <RelativeLayout
@@ -65,7 +65,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
-            android:textColor="@color/material_blue_500"
+            android:textColor="@android:color/white"
             android:text="Start to" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,7 +106,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
-            android:textColor="@color/material_blue_500"
+            android:textColor="@android:color/white"
             android:text="End to" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -143,34 +143,19 @@
         </LinearLayout>
 
 
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/close2_form_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:bootstrapBrand="primary"
-            app:bootstrapText="Cancel"
+            app:bootstrapText="Close"
             app:buttonMode="regular"
             app:bootstrapSize="lg"
             app:showOutline="false"
             app:roundedCorners="true" />
 
-        <com.beardedhen.androidbootstrap.BootstrapButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:bootstrapBrand="primary"
-            app:bootstrapText="OK"
-            app:buttonMode="regular"
-            app:bootstrapSize="lg"
-            app:showOutline="false"
-            app:roundedCorners="true" />
-
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>

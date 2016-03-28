@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/material_blue_500"
+            android:textColor="@android:color/white"
             android:layout_marginLeft="15dip"
             android:text="Schedule Name" />
 
@@ -28,50 +28,47 @@
             android:singleLine="true"
             android:textColor="@android:color/white" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/material_blue_500"
-            android:layout_marginLeft="15dip"
-            android:text="Price (Optional)" />
-
-        <EditText
-            android:id="@+id/schedule_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:textColor="@android:color/white" />
-
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
-            <com.beardedhen.androidbootstrap.BootstrapButton
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="15dip"
                 android:layout_weight="1"
-                app:bootstrapBrand="success"
-                app:bootstrapText="Cancel"
-                app:buttonMode="regular"
-                app:showOutline="false"
-                app:roundedCorners="true" />
+                android:text="Publish" />
 
-            <com.beardedhen.androidbootstrap.BootstrapButton
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
+            <com.rey.material.widget.Switch
+                style="@style/Material.Widget.Switch"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="right"
                 android:layout_weight="1"
-                app:bootstrapBrand="success"
-                app:bootstrapText="OK"
-                app:buttonMode="regular"
-                app:showOutline="false"
-                app:roundedCorners="true" />
+                android:checked="true"/>
 
         </LinearLayout>
+
+
+
+
+
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/close1_form_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            app:bootstrapBrand="success"
+            app:bootstrapText="Close"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true" />
     </LinearLayout>
 </ScrollView>

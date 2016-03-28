@@ -89,8 +89,14 @@ public class FormPlanFragment extends Fragment implements View.OnClickListener{
         final BootstrapButton button_schedule = (BootstrapButton) rootView.findViewById(R.id.button_add_schedule);
         final BootstrapButton button_itienary = (BootstrapButton) rootView.findViewById(R.id.button_add_itienary);
 
+        final BootstrapButton button_close1 = (BootstrapButton) rootView.findViewById(R.id.close1_form_button);
+        final BootstrapButton button_close2 = (BootstrapButton) rootView.findViewById(R.id.close2_form_button);
+
         button_schedule.setOnClickListener(this);
         button_itienary.setOnClickListener(this);
+
+        button_close1.setOnClickListener(this);
+        button_close2.setOnClickListener(this);
 
 
         Spinner spinner = (Spinner) rootView.findViewById(R.id.transportation_spinner);
@@ -226,6 +232,20 @@ public class FormPlanFragment extends Fragment implements View.OnClickListener{
                         R.id.panel_schedule, false);
                 PanelButton.showPanel(rootView,
                         R.id.panel_itienary, true);
+                break;
+
+            case R.id.close1_form_button:
+                PanelButton.showPanel(rootView,
+                        R.id.panel_schedule, false);
+                PanelButton.showPanel(rootView,
+                        R.id.panel_itienary, false);
+                break;
+
+            case R.id.close2_form_button:
+                PanelButton.showPanel(rootView,
+                        R.id.panel_schedule, false);
+                PanelButton.showPanel(rootView,
+                        R.id.panel_itienary, false);
                 break;
 
             default:
