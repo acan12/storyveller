@@ -14,4 +14,6 @@
     <color name="tl_background">#e5ebec</color>
     <color name="tl_vertical_line">#7f8283</color>
     <color name="navigationBarColor">#273135</color>
+
+    <color name="orangeColor">#ff7c00</color>
 </resources>
