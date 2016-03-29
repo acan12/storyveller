@@ -219,36 +219,47 @@ public class FormPlanFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        final View backgroundSlideForm = (View) rootView.findViewById(R.id.background_slide_form);
+
         switch (v.getId()){
             case R.id.button_add_schedule:
+                backgroundSlideForm.setVisibility(View.VISIBLE);
                 PanelButton.showPanel(rootView,
                         R.id.panel_itienary, false);
                 PanelButton.showPanel(rootView,
                         R.id.panel_schedule, true);
+                mRecyclerView.setLayoutFrozen(true);
 
                 break;
             case R.id.button_add_itienary:
+                backgroundSlideForm.setVisibility(View.VISIBLE);
                 PanelButton.showPanel(rootView,
                         R.id.panel_schedule, false);
                 PanelButton.showPanel(rootView,
                         R.id.panel_itienary, true);
+                mRecyclerView.setLayoutFrozen(true);
                 break;
 
             case R.id.close1_form_button:
+                backgroundSlideForm.setVisibility(View.GONE);
                 PanelButton.showPanel(rootView,
                         R.id.panel_schedule, false);
                 PanelButton.showPanel(rootView,
                         R.id.panel_itienary, false);
+                mRecyclerView.setLayoutFrozen(false);
                 break;
 
             case R.id.close2_form_button:
+                backgroundSlideForm.setVisibility(View.GONE);
                 PanelButton.showPanel(rootView,
                         R.id.panel_schedule, false);
                 PanelButton.showPanel(rootView,
                         R.id.panel_itienary, false);
+                mRecyclerView.setLayoutFrozen(false);
                 break;
 
             default:
+                backgroundSlideForm.setVisibility(View.GONE);
                 PanelButton.showPanel(rootView,
                         R.id.panel_schedule, false);
                 PanelButton.showPanel(rootView,

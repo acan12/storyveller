@@ -127,6 +127,12 @@
             android:background="#d7d6d6"/>
 
 
+        <View
+            android:id="@+id/background_slide_form"
+            android:background="#55000000"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
         <include layout="@layout/partial_schedule_form" />
         <include layout="@layout/partial_itienary_form" />
     </RelativeLayout>
