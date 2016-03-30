@@ -24,8 +24,8 @@ import java.util.List;
 /**
  * Created by arysuryawan on 9/18/15.
  */
-public class FragmentNavigationDrawer extends Fragment{
-    private static String TAG = FragmentNavigationDrawer.class.getSimpleName();
+public class NavigationDrawerFragment extends Fragment{
+    private static String TAG = NavigationDrawerFragment.class.getSimpleName();
 
     private RecyclerView recyclerView;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -35,7 +35,7 @@ public class FragmentNavigationDrawer extends Fragment{
     private static String[] titles = null;
     private FragmentDrawerListener drawerListener;
 
-    public FragmentNavigationDrawer() {
+    public NavigationDrawerFragment() {
 
     }
 

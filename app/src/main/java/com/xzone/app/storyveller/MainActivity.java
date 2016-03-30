@@ -1,6 +1,5 @@
 package com.xzone.app.storyveller;
 
-import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -17,15 +16,15 @@ import android.widget.Toast;
 
 
 import com.astuetz.PagerSlidingTabStrip;
-import com.xzone.app.storyveller.fragment.FragmentNavigationDrawer;
+import com.xzone.app.storyveller.fragment.NavigationDrawerFragment;
 import com.xzone.app.storyveller.fragment.ArticleFragment;
 import com.xzone.app.storyveller.fragment.TimelineFragment;
 import com.xzone.app.storyveller.fragment.TripFragment;
 
-public class MainActivity extends AppCompatActivity implements FragmentNavigationDrawer.FragmentDrawerListener{
+public class MainActivity extends AppCompatActivity implements NavigationDrawerFragment.FragmentDrawerListener{
 
     private Toolbar mToolbar;
-    private FragmentNavigationDrawer drawerFragment;
+    private NavigationDrawerFragment drawerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements FragmentNavigatio
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        drawerFragment = (FragmentNavigationDrawer)
+        drawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
@@ -51,11 +50,12 @@ public class MainActivity extends AppCompatActivity implements FragmentNavigatio
         pager.setAdapter(new TabPagerAdapter(getSupportFragmentManager()));
 
         // Bind the tabs to the ViewPager
-        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        final PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabs.setViewPager(pager);
         tabs.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        tabs.setTextColor(Color.WHITE);
-        tabs.setIndicatorColor(getResources().getColor(R.color.orangeColor));
+//        tabs.setTextColor(Color.WHITE);
+
+
 
 
 
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements FragmentNavigatio
 
     public class TabPagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = { "Trip", "Blog" };
+        private final String[] TITLES = { "Trip", "Story" };
 
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);

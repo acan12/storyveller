@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xzone.app.storyveller.R;
@@ -62,15 +61,15 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        public ImageView imgThumbnail;
-        public TextView tvNature;
-        public TextView tvDesNature;
+//        public ImageView imgThumbnail;
+        public TextView storyTitle;
+        public TextView storyDescription;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
-            tvNature = (TextView)itemView.findViewById(R.id.trip_title);
-            tvDesNature = (TextView)itemView.findViewById(R.id.trip_description);
+//            imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
+            storyTitle = (TextView)itemView.findViewById(R.id.story_title);
+            storyDescription = (TextView)itemView.findViewById(R.id.story_description);
         }
     }
 
@@ -85,9 +84,9 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         NatureItemDummy nature = mItems.get(position);
-        holder.tvNature.setText(nature.getName());
-//        holder.tvDesNature.setText(nature.getDes());
-        holder.imgThumbnail.setImageResource(nature.getThumbnail());
+        holder.storyTitle.setText(nature.getName());
+        holder.storyDescription.setText(nature.getDes());
+//        holder.imgThumbnail.setImageResource(nature.getThumbnail());
     }
 
     @Override

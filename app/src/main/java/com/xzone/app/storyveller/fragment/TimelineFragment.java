@@ -25,7 +25,6 @@ import com.beardedhen.androidbootstrap.BootstrapButton;
 //import com.melnykov.fab.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.xzone.app.storyveller.FormActivity;
 import com.xzone.app.storyveller.R;
 import com.xzone.app.storyveller.ReservationActivity;
@@ -39,7 +38,6 @@ public class TimelineFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private SlidingUpPanelLayout slidingLayout;
 
     public TimelineFragment(){
 
@@ -109,6 +107,16 @@ public class TimelineFragment extends Fragment {
             }
         });
 
+        FloatingActionButton fabMenuModify = (FloatingActionButton) fam.findViewById(R.id.button_modify);
+        fabMenuModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FormActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        button_modify
 //        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
 //        fab.attachToRecyclerView(mRecyclerView);
 //        fab.setOnClickListener(new View.OnClickListener() {
