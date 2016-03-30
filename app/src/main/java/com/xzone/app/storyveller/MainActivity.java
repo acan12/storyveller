@@ -1,5 +1,6 @@
 package com.xzone.app.storyveller;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        routesLogin();
+
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -59,6 +62,15 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 
 
 
+    }
+
+    private void routesLogin(){
+        Intent intent = getIntent();
+
+        if(!intent.getBooleanExtra("login_valid", false)) {
+            Intent intent2 = new Intent(this, LoginActivity.class);
+            startActivity(intent2);
+        }
     }
 
     @Override
