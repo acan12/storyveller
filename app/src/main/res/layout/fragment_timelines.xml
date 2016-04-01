@@ -144,7 +144,7 @@
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:fab_title="Map"
+                app:fab_title="Reserve"
                 app:fab_colorNormal="@color/fab_colorNormal"
                 app:fab_colorPressed="@color/fab_colorPressed"
                 app:fab_size="mini" />
@@ -160,19 +160,7 @@
                 app:fab_size="mini"/>
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
-        <!--<com.melnykov.fab.FloatingActionButton-->
-            <!--android:id="@+id/fab"-->
-            <!--android:layout_width="fill_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="16dp"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:src="@drawable/ic_edit"-->
-            <!--app:fab_type="normal"-->
-            <!--app:fab_shadow="true"-->
-            <!--app:fab_colorNormal="@color/fab_colorNormal"-->
-            <!--app:fab_colorPressed="@color/fab_colorPressed"-->
-            <!--app:fab_colorRipple="@color/fab_colorRipple" />-->
+
     </RelativeLayout>
 
 

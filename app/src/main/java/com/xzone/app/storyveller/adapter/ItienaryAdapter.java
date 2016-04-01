@@ -69,8 +69,8 @@ public class ItienaryAdapter extends RecyclerView.Adapter<ItienaryAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
 //            imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
-            infoTitle = (TextView)itemView.findViewById(R.id.info_title);
-            infoDescription = (TextView)itemView.findViewById(R.id.item_info_description);
+            infoTitle = (TextView)itemView.findViewById(R.id.item_title);
+            infoDescription = (TextView)itemView.findViewById(R.id.item_description);
         }
     }
 
