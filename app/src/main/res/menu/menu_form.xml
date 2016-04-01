@@ -4,11 +4,7 @@
     tools:context=".MainActivity">
 
 
-    <item
-        android:id="@+id/action_cancel"
-        android:title="Cancel"
-        android:orderInCategory="100"
-        app:showAsAction="always" />
+
     <item
     android:id="@+id/action_ok"
     android:title="Ok"

@@ -17,7 +17,7 @@ import com.xzone.app.storyveller.fragment.TripFragment;
 /**
  * Created by arysuryawan on 10/25/15.
  */
-public class DetailActivity extends AppCompatActivity {
+public class TimelineDetailActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 

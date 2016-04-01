@@ -44,21 +44,35 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
         </activity>
 
-        <activity android:name=".DetailActivity"
+        <activity android:name=".TimelineEditActivity"
+            android:label= ""
+            android:parentActivityName=".MainActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".TimelineDetailActivity"
             android:label= "Detail"
             android:parentActivityName=".MainActivity" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
         </activity>
 
-        <activity android:name=".FormActivity"
-            android:label= ""
-            android:parentActivityName=".DetailActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".DetailActivity" />
+        <activity android:name=".ItienaryDetailActivity"
+            android:label= "Itienary"
+            android:parentActivityName=".TimelineEditActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".TimelineEditActivity" />
         </activity>
 
+        <activity android:name=".StoryDetailActivity"
+            android:label= "Story"
+            android:parentActivityName=".MainActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        </activity>
+
+
+
         <activity android:name=".ReservationActivity"
-            android:parentActivityName=".DetailActivity" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".DetailActivity" />
+            android:parentActivityName=".TimelineDetailActivity" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".TimelineDetailActivity" />
         </activity>
     </application>
 

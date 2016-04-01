@@ -1,27 +1,31 @@
 package com.xzone.app.storyveller.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.xzone.app.storyveller.R;
-import com.xzone.app.storyveller.adapter.ArticleAdapter;
+import com.xzone.app.storyveller.StoryDetailActivity;
+import com.xzone.app.storyveller.TimelineDetailActivity;
+import com.xzone.app.storyveller.adapter.StoryAdapter;
 
 /**
  * Created by arysuryawan on 9/18/15.
  */
-public class ArticleFragment extends Fragment {
+public class StoryFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public  ArticleFragment(){
+    public StoryFragment(){
 
     }
 
@@ -45,9 +49,19 @@ public class ArticleFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(this.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new ArticleAdapter();
+        mAdapter = new StoryAdapter();
         mRecyclerView.setAdapter(mAdapter);
 
+        mRecyclerView.addOnItemTouchListener(new BaseFragment.RecyclerTouchListener(getActivity(), mRecyclerView, new BaseFragment.RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Intent intent = new Intent(getActivity(), StoryDetailActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {}
+        }));
         return rootView;
     }
 

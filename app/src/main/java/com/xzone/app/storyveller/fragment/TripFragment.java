@@ -4,20 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
-import com.xzone.app.storyveller.DetailActivity;
-import com.xzone.app.storyveller.FormActivity;
+import com.xzone.app.storyveller.TimelineDetailActivity;
+import com.xzone.app.storyveller.TimelineEditActivity;
 import com.xzone.app.storyveller.R;
 import com.xzone.app.storyveller.adapter.BoardAdapter;
 
@@ -57,7 +53,7 @@ public class TripFragment extends BaseFragment {
             public void onClick(View view, int position) {
                 Log.d("EVENT", "trigger from click!");
 
-                Intent intent = new Intent(getActivity(), DetailActivity.class);
+                Intent intent = new Intent(getActivity(), TimelineDetailActivity.class);
                 intent.putExtra("dodol", "xx");
                 startActivity(intent);
             }
@@ -80,7 +76,7 @@ public class TripFragment extends BaseFragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), FormActivity.class);
+                Intent intent = new Intent(getActivity(), TimelineEditActivity.class);
                 startActivity(intent);
 
             }

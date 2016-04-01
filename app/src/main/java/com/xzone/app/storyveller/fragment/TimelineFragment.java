@@ -8,26 +8,21 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.beardedhen.androidbootstrap.BootstrapButton;
 //import com.melnykov.fab.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-import com.xzone.app.storyveller.FormActivity;
+import com.xzone.app.storyveller.ItienaryDetailActivity;
+import com.xzone.app.storyveller.TimelineDetailActivity;
+import com.xzone.app.storyveller.TimelineEditActivity;
 import com.xzone.app.storyveller.R;
-import com.xzone.app.storyveller.ReservationActivity;
 import com.xzone.app.storyveller.adapter.ItienaryAdapter;
 
 /**
@@ -111,22 +106,23 @@ public class TimelineFragment extends Fragment {
         fabMenuModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), FormActivity.class);
+                Intent intent = new Intent(getActivity(), TimelineEditActivity.class);
                 startActivity(intent);
             }
         });
 
-//        button_modify
-//        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
-//        fab.attachToRecyclerView(mRecyclerView);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), FormActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+
+
+        mRecyclerView.addOnItemTouchListener(new BaseFragment.RecyclerTouchListener(getActivity(), mRecyclerView, new BaseFragment.RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Intent intent = new Intent(getActivity(), ItienaryDetailActivity.class);
+                getActivity().startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {}
+        }));
 
         return rootView;
     }

@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.xzone.app.storyveller.fragment.NavigationDrawerFragment;
-import com.xzone.app.storyveller.fragment.ArticleFragment;
+import com.xzone.app.storyveller.fragment.StoryFragment;
 import com.xzone.app.storyveller.fragment.TimelineFragment;
 import com.xzone.app.storyveller.fragment.TripFragment;
 
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
                 title = getString(R.string.title_timeline);
                 break;
             case 1:
-                fragment = new ArticleFragment();
+                fragment = new StoryFragment();
                 title = getString(R.string.title_articles);
                 break;
             case 2:
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         public Fragment getItem(int position) {
             switch(position){
                 case 0: return new TripFragment();
-                case 1: return new ArticleFragment();
+                case 1: return new StoryFragment();
 
                 default: return new TripFragment();
             }

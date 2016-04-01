@@ -27,11 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="48dip"
             android:textColorPrimary="@android:color/white"
-            app:pstsIndicatorColor="@color/orangeColor"
-            app:pstsIndicatorHeight="5dp"
-            app:pstsUnderlineColor="@color/orangeColor"
-            app:pstsUnderlineHeight="2dp"
-            app:pstsShouldExpand="true" />
+            app:pstsIndicatorColor="#e9ec13"
+            app:pstsIndicatorHeight="5dp" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"

@@ -4,9 +4,11 @@ import android.app.Fragment;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -14,12 +16,12 @@ import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
-import com.xzone.app.storyveller.fragment.FormPlanFragment;
+import com.xzone.app.storyveller.fragment.TimelineEditPlanFragment;
 
 /**
  * Created by arysuryawan on 11/3/15.
  */
-public class FormActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener{
+public class TimelineEditActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener{
 
     private Toolbar mToolbar;
     private Fragment fragment;
@@ -36,7 +38,7 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
         // show back actionbar button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        fragment = new FormPlanFragment();
+        fragment = new TimelineEditPlanFragment();
 
         if (fragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
@@ -68,13 +70,16 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
 
         if(id == R.id.action_ok) {
 
-            Fragment fragment = new FormPlanFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_body, fragment);
-            fragmentTransaction.commit();
 
-        }else if(id == R.id.action_cancel) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("login_valid", true);
+            startActivity(intent);
+
+//            Fragment fragment = new TimelineEditPlanFragment();
+//            FragmentManager fragmentManager = getFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.replace(R.id.container_body, fragment);
+//            fragmentTransaction.commit();
 
         }
 

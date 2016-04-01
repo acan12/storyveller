@@ -1,6 +1,7 @@
 package com.xzone.app.storyveller.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ import java.util.List;
 /**
  * Created by arysuryawan on 10/10/15.
  */
-public class ItienaryAdapter extends RecyclerView.Adapter<ItienaryAdapter.ViewHolder> {
+public class ItienaryAdapter extends RecyclerView.Adapter<ItienaryAdapter.ViewHolder> implements View.OnClickListener{
 
     List<NatureItemDummy> mItems;
 
@@ -60,19 +61,6 @@ public class ItienaryAdapter extends RecyclerView.Adapter<ItienaryAdapter.ViewHo
         mItems.add(nature);
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
-
-        public ImageView imgThumbnail;
-        public TextView infoTitle;
-        public TextView infoDescription;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-//            imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
-            infoTitle = (TextView)itemView.findViewById(R.id.item_title);
-            infoDescription = (TextView)itemView.findViewById(R.id.item_description);
-        }
-    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -87,10 +75,31 @@ public class ItienaryAdapter extends RecyclerView.Adapter<ItienaryAdapter.ViewHo
         holder.infoTitle.setText(nature.getName());
         holder.infoDescription.setText(nature.getDes());
 //        holder.imgThumbnail.setImageResource(nature.getThumbnail());
+
     }
 
     @Override
     public int getItemCount() {
         return mItems.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+        Log.d("onClick ", "----- clicked ---");
+    }
+
+
+    static class ViewHolder extends RecyclerView.ViewHolder{
+
+        public ImageView imgThumbnail;
+        public TextView infoTitle;
+        public TextView infoDescription;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+//            imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
+            infoTitle = (TextView)itemView.findViewById(R.id.item_title);
+            infoDescription = (TextView)itemView.findViewById(R.id.item_description);
+        }
     }
 }

@@ -15,11 +15,11 @@ import java.util.List;
 /**
  * Created by arysuryawan on 9/23/15.
  */
-public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHolder> {
+public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> {
 
     List<NatureItemDummy> mItems;
 
-    public ArticleAdapter(){
+    public StoryAdapter(){
         super();
         mItems = new ArrayList<NatureItemDummy>();
         NatureItemDummy nature = new NatureItemDummy();
