@@ -7,14 +7,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.xzone.app.storyveller.R;
 import com.xzone.app.storyveller.StoryDetailActivity;
-import com.xzone.app.storyveller.TimelineDetailActivity;
 import com.xzone.app.storyveller.adapter.StoryAdapter;
 
 /**
@@ -42,7 +40,7 @@ public class StoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_articles, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_story, container, false);
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 

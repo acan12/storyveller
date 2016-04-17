@@ -1,5 +1,6 @@
 package com.xzone.app.storyveller;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ public class ItienaryDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_itienary_detail);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle("Toba Lake");
         setSupportActionBar(mToolbar);
 
         // show back actionbar button

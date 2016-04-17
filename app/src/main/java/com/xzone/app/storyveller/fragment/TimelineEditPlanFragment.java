@@ -119,10 +119,16 @@ public class TimelineEditPlanFragment extends Fragment implements View.OnClickLi
         button_close2.setOnClickListener(this);
 
 
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.transportation_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.list_of_transportation, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        Spinner catsSpinner = (Spinner) rootView.findViewById(R.id.categories_spinner);
+        Spinner transpSpinner = (Spinner) rootView.findViewById(R.id.transportation_spinner);
+
+        ArrayAdapter<CharSequence> catsAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.list_of_category, android.R.layout.simple_spinner_item);
+        catsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        catsSpinner.setAdapter(catsAdapter);
+
+        ArrayAdapter<CharSequence> transpAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.list_of_transportation, android.R.layout.simple_spinner_item);
+        transpAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        transpSpinner.setAdapter(transpAdapter);
 
 
         // Show a datepicker when the dateButton is clicked - start & end schedule

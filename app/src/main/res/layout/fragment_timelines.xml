@@ -91,10 +91,10 @@
 
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:background="@android:color/white"
+        android:background="@color/tl_background"
         android:layout_alignParentBottom="true">
 
 
@@ -140,6 +140,14 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="5dp"
             android:layout_marginEnd="16dp">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_title="Promotion Deals"
+                app:fab_colorNormal="@color/fab_colorNormal"
+                app:fab_colorPressed="@color/fab_colorPressed"
+                app:fab_size="mini" />
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"

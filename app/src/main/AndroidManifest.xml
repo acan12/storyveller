@@ -57,7 +57,6 @@
         </activity>
 
         <activity android:name=".ItienaryDetailActivity"
-            android:label= "Itienary"
             android:parentActivityName=".TimelineEditActivity" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".TimelineEditActivity" />
         </activity>

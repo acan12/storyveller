@@ -25,4 +25,9 @@
         <item name="android:textColor">@color/textColorPrimary</item>
     </style>
 
+    <style name="custom_toolbar" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
 </resources>
