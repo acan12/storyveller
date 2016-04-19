@@ -1,5 +1,7 @@
 package com.xzone.app.storyveller;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -34,6 +36,7 @@ public class TimelineDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        cancelNotification(this, 001);
 
         Fragment fragment = new TimelineFragment();
 
@@ -46,6 +49,12 @@ public class TimelineDetailActivity extends AppCompatActivity {
         }
     }
 
+
+    public static void cancelNotification(Context ctx, int notifyId) {
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
+        nMgr.cancel(notifyId);
+    }
 
 
     @Override

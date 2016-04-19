@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Storyveller</string>
+    <string name="facebook_app_id">1606069429719183</string>
 
     <string name="hello_world">Hello world Guys!</string>
     <string name="action_settings">Settings</string>

@@ -59,20 +59,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+
                 app:bootstrapText="Login"
                 app:bootstrapSize="lg"
                 app:roundedCorners="true"
                 app:bootstrapBrand="warning"/>
 
-            <com.beardedhen.androidbootstrap.BootstrapButton
-                android:id="@+id/button_facebook_login"
-                android:layout_width="match_parent"
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                app:bootstrapText="Facebook Login"
-                app:bootstrapSize="lg"
-                app:roundedCorners="true"
-                app:bootstrapBrand="primary"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
+            <!--<com.beardedhen.androidbootstrap.BootstrapButton-->
+                <!--android:id="@+id/button_facebook_login"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="5dp"-->
+                <!--app:bootstrapText="Facebook Login"-->
+                <!--app:bootstrapSize="lg"-->
+                <!--app:roundedCorners="true"-->
+                <!--app:bootstrapBrand="primary"/>-->
         </LinearLayout>
 
     </RelativeLayout>

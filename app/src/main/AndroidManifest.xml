@@ -20,12 +20,14 @@
     
 
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/MyMaterialTheme" >
 
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/map_google_token"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
 
 
         <activity
@@ -73,6 +75,16 @@
             android:parentActivityName=".TimelineDetailActivity" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".TimelineDetailActivity" />
         </activity>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
     </application>
+
+    <provider android:authorities="com.facebook.app.FacebookContentProvider1234"
+        android:name="com.facebook.FacebookContentProvider"
+        android:exported="true" />
 
 </manifest>
