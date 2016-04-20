@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        routesLogin();
+        //routesLogin();
 
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);

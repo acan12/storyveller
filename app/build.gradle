@@ -67,7 +67,7 @@ android{
 //        transitive=true
 //    }
         // Facebook integration
-        compile 'com.facebook.android:facebook-android-sdk:4.+'
+        compile 'com.facebook.android:facebook-android-sdk:4.7.0'
 
     }
 }
