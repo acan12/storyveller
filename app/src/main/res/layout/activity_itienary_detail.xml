@@ -9,14 +9,13 @@
         android:orientation="vertical">
 
         <!--<include-->
-            <!--android:id="@+id/toolbar"-->
-            <!--layout="@layout/toolbar" />-->
+        <!--android:id="@+id/toolbar"-->
+        <!--layout="@layout/toolbar" />-->
 
         <include layout="@layout/itienary_detail" />
 
 
     </LinearLayout>
-
 
 
 </android.support.v4.widget.DrawerLayout>

@@ -17,10 +17,10 @@ import android.widget.Toast;
 
 
 import com.astuetz.PagerSlidingTabStrip;
-import com.xzone.app.storyveller.fragment.NavigationDrawerFragment;
-import com.xzone.app.storyveller.fragment.StoryFragment;
-import com.xzone.app.storyveller.fragment.TimelineFragment;
-import com.xzone.app.storyveller.fragment.TripFragment;
+import core.fragment.NavigationDrawerFragment;
+import core.fragment.StoryFragment;
+import core.fragment.TimelineFragment;
+import core.fragment.TripFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationDrawerFragment.FragmentDrawerListener{
 

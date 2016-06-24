@@ -21,7 +21,6 @@
         </LinearLayout>
 
 
-
         <FrameLayout
             android:id="@+id/container_body"
             android:layout_width="fill_parent"
@@ -30,7 +29,6 @@
 
 
     </LinearLayout>
-
 
 
 </android.support.v4.widget.DrawerLayout>

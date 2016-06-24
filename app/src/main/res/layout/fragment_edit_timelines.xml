@@ -5,21 +5,20 @@
     android:orientation="vertical">
 
 
-
     <!-- header1-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:background="@color/tl_background"
         android:paddingBottom="10dp"
-        android:background="@color/tl_background">
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Vacation Family Aug, 2015"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -29,7 +28,7 @@
             android:text="IDR 5.000.000"
             android:textColor="#000"
             android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -38,17 +37,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:background="@android:color/white"
         android:orientation="horizontal"
-        android:background="@android:color/white">
+        android:padding="10dp">
 
 
         <View
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_marginTop="1dp"
-            android:background="@drawable/circle_big_orange"
-            />
+            android:background="@drawable/circle_big_orange" />
 
 
         <TextView
@@ -56,15 +54,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Mar'12 2015"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
 
         <View
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:layout_marginTop="1dp"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/small_red_circle"
-            />
+            android:layout_marginTop="1dp"
+            android:background="@drawable/small_red_circle" />
 
 
         <TextView
@@ -72,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Mar'17 2015"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
 
     </LinearLayout>
     <!-- end -->
@@ -89,9 +86,9 @@
             android:id="@+id/button_add_schedule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+  Schedule"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:text="+  Schedule"
             app:bootstrapBrand="success"
             app:bootstrapSize="md"
             app:buttonMode="regular"
@@ -101,9 +98,9 @@
             android:id="@+id/button_add_itienary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+ Itienary    "
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:text="+ Itienary    "
             app:bootstrapBrand="info"
             app:bootstrapSize="md"
             app:buttonMode="regular"
@@ -116,24 +113,26 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ababab" >
+        android:background="#ababab">
 
         <!-- A RecyclerView with some commonly used attributes -->
         <android.support.v7.widget.RecyclerView
             android:id="@+id/my_recycler_view"
-            android:scrollbars="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false" />
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
 
 
         <View
             android:id="@+id/background_slide_form"
-            android:background="#55000000"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="#55000000"
+            android:visibility="gone" />
+
         <include layout="@layout/partial_schedule_form" />
+
         <include layout="@layout/partial_itienary_form" />
     </RelativeLayout>
 

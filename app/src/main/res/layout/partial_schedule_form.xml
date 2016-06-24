@@ -3,23 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignBottom="@+id/my_recycler_view">
-    <LinearLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/panel_schedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/bootstrap_brand_secondary_text"
         android:orientation="vertical"
-        android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:visibility="gone">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
             android:layout_marginLeft="15dip"
-            android:text="Schedule Name" />
+            android:text="Schedule Name"
+            android:textColor="@android:color/white" />
 
         <EditText
             android:id="@+id/schedule_label_name"
@@ -31,9 +31,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
             android:layout_marginLeft="15dip"
-            android:text="Category" />
+            android:text="Category"
+            android:textColor="@android:color/white" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -47,10 +47,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
                 android:background="@drawable/border_spinner"
                 android:padding="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="10dp"
                 android:spinnerMode="dropdown" />
 
         </RelativeLayout>
@@ -58,31 +58,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
                 android:layout_marginLeft="15dip"
                 android:layout_weight="1"
-                android:text="Publish" />
+                android:text="Publish"
+                android:textColor="@android:color/white" />
 
             <com.rey.material.widget.Switch
                 style="@style/Material.Widget.Switch"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:gravity="right"
                 android:layout_weight="1"
-                android:checked="false"/>
+                android:checked="false"
+                android:gravity="right" />
 
         </LinearLayout>
-
-
-
-
-
 
 
         <com.beardedhen.androidbootstrap.BootstrapButton
@@ -92,10 +87,10 @@
             android:layout_margin="15dp"
             android:layout_weight="1"
             app:bootstrapBrand="success"
-            app:bootstrapText="Close"
             app:bootstrapSize="lg"
+            app:bootstrapText="Close"
             app:buttonMode="regular"
-            app:showOutline="false"
-            app:roundedCorners="true" />
+            app:roundedCorners="true"
+            app:showOutline="false" />
     </LinearLayout>
 </ScrollView>

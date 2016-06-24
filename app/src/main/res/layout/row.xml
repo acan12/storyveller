@@ -8,7 +8,7 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="StepsView 1"/>
+        android:text="StepsView 1" />
 
     <com.anton46.stepsview.StepsView
         android:id="@+id/stepsView"

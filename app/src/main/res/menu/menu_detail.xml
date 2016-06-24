@@ -6,22 +6,16 @@
 
     <item
         android:id="@+id/time_btn"
-        android:title="All"
+        android:icon="@mipmap/ic_list"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_layer"
+        android:title="All"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/map_btn"
-        android:title="Edit"
+        android:icon="@mipmap/ic_place"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_map"
+        android:title="Edit"
         app:showAsAction="always" />
 
-
-    <!--<item-->
-        <!--android:id="@+id/action_settings"-->
-        <!--android:title="@string/action_settings"-->
-        <!--android:orderInCategory="100"-->
-        <!--app:showAsAction="never" />-->
 </menu>

@@ -5,21 +5,20 @@
     android:orientation="vertical">
 
 
-
     <!-- header1-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:background="@color/tl_background"
         android:paddingBottom="10dp"
-        android:background="@color/tl_background">
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Vacation Family Aug, 2015"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -29,7 +28,7 @@
             android:text="IDR 5.000.000"
             android:textColor="#000"
             android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -38,17 +37,16 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:background="@android:color/white"
         android:orientation="horizontal"
-        android:background="@android:color/white">
+        android:padding="10dp">
 
 
         <View
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_marginTop="1dp"
-            android:background="@drawable/circle_big_orange"
-            />
+            android:background="@drawable/circle_big_orange" />
 
 
         <TextView
@@ -56,15 +54,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Mar'12 2015"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
 
         <View
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:layout_marginTop="1dp"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/small_red_circle"
-            />
+            android:layout_marginTop="1dp"
+            android:background="@drawable/small_red_circle" />
 
 
         <TextView
@@ -72,57 +69,55 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Mar'17 2015"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
     </LinearLayout>
     <!-- end -->
 
     <!--<com.beardedhen.androidbootstrap.BootstrapButton-->
-        <!--android:id="@+id/reserve_button"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:text="RSVP"-->
-        <!--android:layout_margin="10dp"-->
-        <!--app:bootstrapBrand="success"-->
-        <!--app:bootstrapSize="lg"-->
-        <!--app:buttonMode="regular"-->
-        <!--app:showOutline="false"-->
-        <!--app:roundedCorners="true"-->
-        <!--/>-->
+    <!--android:id="@+id/reserve_button"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:text="RSVP"-->
+    <!--android:layout_margin="10dp"-->
+    <!--app:bootstrapBrand="success"-->
+    <!--app:bootstrapSize="lg"-->
+    <!--app:buttonMode="regular"-->
+    <!--app:showOutline="false"-->
+    <!--app:roundedCorners="true"-->
+    <!--/>-->
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:background="@color/tl_background"
-        android:layout_alignParentBottom="true">
-
+        android:background="@color/tl_background">
 
 
         <!-- body -->
         <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_layout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/swipe_layout">
+            android:layout_height="wrap_content">
 
             <!-- A RecyclerView with some commonly used attributes -->
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/my_recycler_view"
-                android:scrollbars="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
 
 
         </android.support.v4.widget.SwipeRefreshLayout>
 
 
-
         <View
             android:id="@+id/background_fab_menus"
-            android:background="#55000000"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="#55000000"
+            android:visibility="gone" />
 
         <com.getbase.floatingactionbutton.FloatingActionsMenu
             android:id="@+id/multiple_actions_left"
@@ -130,51 +125,46 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="16dp"
             app:fab_addButtonColorNormal="@color/fab_colorNormal"
             app:fab_addButtonColorPressed="@color/fab_colorPressed"
             app:fab_addButtonPlusIconColor="@color/textColorPrimary"
             app:fab_addButtonStrokeVisible="false"
             app:fab_expandDirection="up"
             app:fab_labelStyle="@style/menu_labels_style"
-            app:fab_labelsPosition="left"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginEnd="16dp">
+            app:fab_labelsPosition="left">
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:fab_title="Promotion Deals"
                 app:fab_colorNormal="@color/fab_colorNormal"
                 app:fab_colorPressed="@color/fab_colorPressed"
-                app:fab_size="mini" />
+                app:fab_size="mini"
+                app:fab_title="Promotion Deals" />
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:fab_title="Reserve"
                 app:fab_colorNormal="@color/fab_colorNormal"
                 app:fab_colorPressed="@color/fab_colorPressed"
-                app:fab_size="mini" />
+                app:fab_size="mini"
+                app:fab_title="Reserve" />
 
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/button_modify"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:fab_title="Modify"
                 app:fab_colorNormal="@color/fab_colorNormal"
                 app:fab_colorPressed="@color/fab_colorPressed"
-                app:fab_size="mini"/>
+                app:fab_size="mini"
+                app:fab_title="Modify" />
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     </RelativeLayout>
-
-
-
-
-
 
 
 </LinearLayout>

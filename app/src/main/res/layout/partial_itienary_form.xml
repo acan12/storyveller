@@ -11,50 +11,50 @@
         android:layout_height="match_parent"
         android:background="@color/bootstrap_brand_secondary_text"
         android:orientation="vertical"
-        android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:visibility="gone">
 
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:layout_marginLeft="15dip"
-        android:text="Itenary Name" />
-
-        <EditText
-        android:id="@+id/itinerary_edit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:textColor="@android:color/white"
-        android:layout_margin="5dip"/>
-
-        <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="12dip"
-        android:textColor="@android:color/white"
-        android:text="Transportation" />
-
-        <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
-
-        <Spinner
-            android:id="@+id/transportation_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:background="@drawable/border_spinner"
-            android:padding="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="10dp"
-            android:spinnerMode="dropdown" />
+            android:layout_marginLeft="15dip"
+            android:text="Itenary Name"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/itinerary_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:singleLine="true"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dip"
+            android:text="Transportation"
+            android:textColor="@android:color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/transportation_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/border_spinner"
+                android:padding="10dp"
+                android:spinnerMode="dropdown" />
 
         </RelativeLayout>
 
@@ -65,13 +65,15 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
-            android:textColor="@android:color/white"
-            android:text="Start to" />
+            android:text="Start to"
+            android:textColor="@android:color/white" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="left">
+            android:layout_gravity="left"
+            android:orientation="horizontal">
+
             <com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/date_start_button"
                 android:layout_width="match_parent"
@@ -79,11 +81,11 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:bootstrapBrand="success"
-                app:bootstrapText="Date"
                 app:bootstrapSize="md"
+                app:bootstrapText="Date"
                 app:buttonMode="regular"
-                app:showOutline="true"
-                app:roundedCorners="true" />
+                app:roundedCorners="true"
+                app:showOutline="true" />
 
             <com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/time_start_button"
@@ -92,11 +94,11 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:bootstrapBrand="success"
-                app:bootstrapText="Time"
                 app:bootstrapSize="md"
+                app:bootstrapText="Time"
                 app:buttonMode="regular"
-                app:showOutline="true"
-                app:roundedCorners="true" />
+                app:roundedCorners="true"
+                app:showOutline="true" />
 
         </LinearLayout>
 
@@ -106,13 +108,14 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
-            android:textColor="@android:color/white"
-            android:text="End to" />
+            android:text="End to"
+            android:textColor="@android:color/white" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="left">
+            android:layout_gravity="left"
+            android:orientation="horizontal">
 
             <com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/date_end_button"
@@ -121,11 +124,11 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:bootstrapBrand="warning"
-                app:bootstrapText="Date"
                 app:bootstrapSize="md"
+                app:bootstrapText="Date"
                 app:buttonMode="regular"
-                app:showOutline="true"
-                app:roundedCorners="true" />
+                app:roundedCorners="true"
+                app:showOutline="true" />
 
             <com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/time_end_button"
@@ -134,14 +137,13 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:bootstrapBrand="warning"
-                app:bootstrapText="Time"
                 app:bootstrapSize="md"
+                app:bootstrapText="Time"
                 app:buttonMode="regular"
-                app:showOutline="true"
-                app:roundedCorners="true" />
+                app:roundedCorners="true"
+                app:showOutline="true" />
 
         </LinearLayout>
-
 
 
         <com.beardedhen.androidbootstrap.BootstrapButton
@@ -151,11 +153,11 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:bootstrapBrand="primary"
+            app:bootstrapSize="lg"
             app:bootstrapText="Close"
             app:buttonMode="regular"
-            app:bootstrapSize="lg"
-            app:showOutline="false"
-            app:roundedCorners="true" />
+            app:roundedCorners="true"
+            app:showOutline="false" />
 
     </LinearLayout>
 </ScrollView>

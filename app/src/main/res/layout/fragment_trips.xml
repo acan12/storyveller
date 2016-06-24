@@ -8,23 +8,23 @@
     <!-- A RecyclerView with some commonly used attributes -->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
-        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
 
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_edit"
-        app:fab_type="normal"
-        app:fab_shadow="true"
+        android:layout_margin="16dp"
+        android:src="@mipmap/ic_lightbulb"
         app:fab_colorNormal="@color/fab_colorNormal"
         app:fab_colorPressed="@color/fab_colorPressed"
-        app:fab_colorRipple="@color/fab_colorRipple" />
+        app:fab_colorRipple="@color/fab_colorRipple"
+        app:fab_shadow="true"
+        app:fab_type="normal" />
 
 </RelativeLayout>

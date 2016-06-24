@@ -3,28 +3,18 @@ package com.xzone.app.storyveller;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
-
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-
-import com.xzone.app.storyveller.R;
-import com.xzone.app.storyveller.fragment.TimelineFragment;
 
 /**
  * Created by arysuryawan on 4/1/16.
@@ -42,15 +32,13 @@ public class ItienaryDetailActivity extends AppCompatActivity {
         mToolbar.setTitle("Toba Lake");
         setSupportActionBar(mToolbar);
 
-        Log.d("","==================== call notify");
+        Log.d("", "==================== call notify");
 
         // show back actionbar button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
-
-        Bitmap remote_picture  = null;
+        Bitmap remote_picture = null;
 
         // Creates an explicit intent for an ResultActivity to receive.
         Intent resultIntent = new Intent(this, TimelineDetailActivity.class);

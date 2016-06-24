@@ -10,11 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.xzone.app.storyveller.fragment.MapBoxFragment;
-import com.xzone.app.storyveller.fragment.TimelineFragment;
-import com.xzone.app.storyveller.fragment.TripFragment;
+import core.fragment.MapBoxFragment;
+import core.fragment.TimelineFragment;
 
 /**
  * Created by arysuryawan on 10/25/15.
