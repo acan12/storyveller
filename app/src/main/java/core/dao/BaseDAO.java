@@ -10,14 +10,14 @@ import io.realm.RealmResults;
 /**
  * Created by arysuryawan on 6/24/16.
  */
-public class BaseDAO {
+public class BaseDao {
     protected static Realm realm;
 
-    public BaseDAO(Context context) {
+    protected BaseDao(Context context) {
         setupRealm(context);
     }
 
-    protected static Realm setupRealm(Context context) {
+    protected Realm setupRealm(Context context) {
         RealmConfiguration realmConfig = new RealmConfiguration.Builder(context)
                 .deleteRealmIfMigrationNeeded()
                 .name("beepacker.realm")
@@ -28,6 +28,7 @@ public class BaseDAO {
         return realm;
     }
 
+
     protected static RealmObject saveToRealm(RealmObject object) {
         realm.beginTransaction();
         RealmObject obj = realm.copyToRealm(object);
@@ -37,55 +38,34 @@ public class BaseDAO {
         return obj;
     }
 
-    protected static RealmResults getObjects(Class clazz) {
-        RealmResults objects = realm.allObjects(clazz);
+
+    protected static RealmResults getObjectsRealm(Class clazz) {
+        RealmResults objects = realm.where(clazz).findAll();
 
         return objects;
     }
 
-    public static RealmResults getDataByKey(String key, String value, Class clazz) {
+
+    protected static RealmResults getObjectByKeyRealm(String key, String value, Class clazz) {
         RealmResults items = realm.where(clazz)
                 .beginGroup()
-                .contains(key, value)
+                .equalTo(key, value)
                 .endGroup()
                 .findAll();
 
         return items;
     }
 
-    public static RealmResults getDataByKeyByValueBoolean(String key, Boolean value, Class clazz) {
-        RealmResults items = realm.where(clazz)
-                .equalTo(key, value).findAll();
-
-        return items;
-    }
-
-    private static void close() {
+    protected static void closeRealm() {
         realm.close();
     }
 
-    protected static void clear(Class clazz) {
+    protected static void deleteRealm(Class clazz) {
         try {
             realm.beginTransaction();
-            realm.clear(clazz);
+            realm.delete(clazz);
             realm.commitTransaction();
         } catch (Exception e) {
         }
-    }
-
-    protected static void removeAll() {
-        realm.beginTransaction();
-        realm.deleteAll();
-        realm.commitTransaction();
-
-        close();
-    }
-
-    protected static void removeAllObject(Class clazz) {
-        realm.beginTransaction();
-        while (getObjects(clazz).size() > 0) {
-            getObjects(clazz).removeLast();
-        }
-        realm.commitTransaction();
     }
 }

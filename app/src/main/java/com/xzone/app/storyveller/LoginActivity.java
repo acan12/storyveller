@@ -1,10 +1,7 @@
 package com.xzone.app.storyveller;
 
-import android.accounts.Account;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
@@ -25,7 +22,7 @@ import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import core.dao.UserDAO;
+import core.dao.UserDao;
 import core.model.User;
 
 /**
@@ -89,7 +86,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         account.setAvatar(url);
                         account.setProvider("facebook");
 
-                        UserDAO.saveUser(account, getApplicationContext());
+                        UserDao.saveUser(account, getApplicationContext());
                     }
                 });
                 Bundle parameters = new Bundle();

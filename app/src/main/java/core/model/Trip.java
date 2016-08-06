@@ -2,12 +2,15 @@ package core.model;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by arysuryawan on 5/15/16.
  */
 public class Trip extends RealmObject {
+    @PrimaryKey
     private String name;
+
     private RealmList<Itienary> itienaries;
 
     public String getName() {

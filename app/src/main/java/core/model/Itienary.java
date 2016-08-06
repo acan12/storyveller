@@ -3,12 +3,15 @@ package core.model;
 import java.util.Date;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by arysuryawan on 5/15/16.
  */
 public class Itienary extends RealmObject {
+    @PrimaryKey
     private String name;
+
     private String latlong;
     private String category;
     private String transportation;

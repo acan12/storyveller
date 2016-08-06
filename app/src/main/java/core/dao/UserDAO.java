@@ -7,14 +7,18 @@ import core.model.User;
 /**
  * Created by arysuryawan on 6/24/16.
  */
-public class UserDAO extends BaseDAO{
+public class UserDao extends BaseDao {
 
-    public UserDAO(Context context) {
+    protected UserDao(Context context) {
         super(context);
     }
 
+    public static UserDao instanceObject(Context context) {
+        return new UserDao(context);
+    }
+
     public static void saveUser(User user, Context context){
-        setupRealm(context);
+        instanceObject(context);
         saveToRealm(user);
     }
 }
