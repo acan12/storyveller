@@ -8,7 +8,7 @@ import com.xzone.app.storyveller.R;
 /**
  * Created by arysuryawan on 8/6/16.
  */
-public class AppPrefUtil {
+public class PreferenceUtil {
 
     static final int PREFERENCE_KEY = R.string.app_name;
     static SharedPreferences sharedPref;
