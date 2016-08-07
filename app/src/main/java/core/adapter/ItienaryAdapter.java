@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xzone.app.storyveller.R;
@@ -76,6 +78,17 @@ public class ItienaryAdapter extends RecyclerView.Adapter<ItienaryAdapter.ViewHo
         holder.infoDescription.setText(nature.getDes());
 //        holder.imgThumbnail.setImageResource(nature.getThumbnail());
 
+        // cut line on top list
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) holder.verticalLine.getLayoutParams();
+        if(position == 0){
+            params.setMargins(params.leftMargin, 20, 0, 0);
+            holder.verticalLine.setLayoutParams(params);
+        }
+        if(position == mItems.size()-1){
+            params.setMargins(params.leftMargin, params.topMargin, 0, 370);
+            holder.verticalLine.setLayoutParams(params);
+        }
+
     }
 
     @Override
@@ -94,12 +107,14 @@ public class ItienaryAdapter extends RecyclerView.Adapter<ItienaryAdapter.ViewHo
         public ImageView imgThumbnail;
         public TextView infoTitle;
         public TextView infoDescription;
+        public View verticalLine;
 
         public ViewHolder(View itemView) {
             super(itemView);
 //            imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
             infoTitle = (TextView)itemView.findViewById(R.id.item_title);
             infoDescription = (TextView)itemView.findViewById(R.id.item_description);
+            verticalLine = (View) itemView.findViewById(R.id.vertical_line);
         }
     }
 }
