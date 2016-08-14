@@ -62,12 +62,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
-
-        FacebookSdk.sdkInitialize(this);
+        setup(this);
         setContentView(R.layout.activity_login_page);
-
         ButterKnife.bind(this);
+
+
 
         mCallbackManager = CallbackManager.Factory.create();
 
@@ -85,20 +84,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     }
 
+
     private void manualSignIn() throws Exception {
         String email = userEmail.getText().toString();
         String password = userPassword.getText().toString();
 
-        if(email.equals("ary@gmail.com") && password.equals("120881")){
+        User user = UserDao.getUser(this);
+        if(user.getEmail().equals(email) && UserDao.isPasswordMatch(password, this)){
+
+            Api.loginUser(email, password, this, loginCallback);
             ProgressAction.onProgressStart(10000, this);
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
+
             return;
         }
         throw new Exception();
 
-//        Api.loginUser(email, password, this, loginCallback);
+
     }
 
 
@@ -121,7 +122,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                         User account = User.getInstance();
 
-                        account.setUid(userJson.optString("id"));
+                        account.setUid(Integer.parseInt(userJson.optString("id")));
                         account.setEmail(userJson.optString("email"));
                         account.setDisplayName(userJson.optString("name"));
                         account.setAvatar(url);
@@ -174,11 +175,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         @Override
         public void onResponse(Call call, Response response) throws IOException {
             if(response.isSuccessful()){
+
+                UserDao.addLoginStatus(true, getApplicationContext()); // set loginstatus to true
+
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
-            }else{
-
             }
         }
     };

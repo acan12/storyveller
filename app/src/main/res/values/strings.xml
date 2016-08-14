@@ -54,6 +54,9 @@
 
     <!-- App -->
     <!-- general label -->
-    <string name="invalid_email_or_password">invalid email or password &#xf071;</string>
     <string name="invite_tobe_member">Register</string>
+
+    <!-- warning / error message -->
+    <string name="invalid_email_or_password">invalid email or password &#xf071;</string>
+    <string name="invalid_registration_field">Invalid registration entries &#xf071;</string>
 </resources>

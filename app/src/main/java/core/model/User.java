@@ -12,12 +12,14 @@ public class User extends RealmObject {
     private String email;
 
     private String passwordSHA;
-    private String loginStatus;
+    private String gender;
     private String token;
     private String displayName;
-    private String uid;
     private String avatar;
+    private int uid;
     private long epochCreated;
+    private boolean loginStatus = false;
+
 
     @Ignore
     private String provider;
@@ -31,6 +33,14 @@ public class User extends RealmObject {
         return user;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getPasswordSHA() {
         return passwordSHA;
     }
@@ -39,11 +49,11 @@ public class User extends RealmObject {
         this.passwordSHA = passwordSHA;
     }
 
-    public String getLoginStatus() {
+    public boolean isLoginStatus() {
         return loginStatus;
     }
 
-    public void setLoginStatus(String loginStatus) {
+    public void setLoginStatus(boolean loginStatus) {
         this.loginStatus = loginStatus;
     }
 
@@ -71,11 +81,11 @@ public class User extends RealmObject {
         this.displayName = displayName;
     }
 
-    public String getUid() {
+    public int getUid() {
         return uid;
     }
 
-    public void setUid(String uid) {
+    public void setUid(int uid) {
         this.uid = uid;
     }
 

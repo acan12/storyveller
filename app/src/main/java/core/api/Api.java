@@ -8,6 +8,8 @@ import com.eclipsesource.json.JsonObject;
 
 import java.io.IOException;
 
+import core.IConfig;
+import core.util.PreferenceUtil;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -47,6 +49,8 @@ public class Api extends BaseApi{
 
             JsonObject params = Json.object().add("user", subparams);
 
+            PreferenceUtil.putPreferenceString(IConfig.USER_PASSWORD_KEY, pass, context);
+
             api.call(USER_API_URL, params.toString(), HttpUtilApi.Method.POST, callback);
         } catch (IOException e) {
             e.printStackTrace();
@@ -63,7 +67,7 @@ public class Api extends BaseApi{
                     .add("email", email)
                     .add("password", pass);
 
-            JsonObject params = Json.object().add("user", subparams);
+            JsonObject params = Json.object().add("session", subparams);
 
             api.call(LOGIN_API_URL, params.toString(), HttpUtilApi.Method.POST, callback);
         } catch (IOException e) {

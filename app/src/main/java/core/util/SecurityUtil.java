@@ -2,6 +2,8 @@ package core.util;
 
 import java.security.MessageDigest;
 
+import core.IConfig;
+
 /**
  * Created by arysuryawan on 8/13/16.
  */
@@ -24,4 +26,13 @@ public class SecurityUtil {
             throw new RuntimeException(ex);
         }
     }
+
+
+    public static boolean isValidPassword(String password, String passwordConfirm){
+        if(password.length() < IConfig.PASSWORD_MIN_LIMIT) return false;
+        if(!password.equals(passwordConfirm)) return false;
+
+        return true;
+    }
+
 }
