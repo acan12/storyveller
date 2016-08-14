@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:baselineAligned="false">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
+    android:orientation="vertical">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_highlight_spot"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:background="#80FFFFFF"
+        android:orientation="vertical">
 
 
         <ImageView
@@ -26,7 +29,7 @@
             android:id="@+id/facebook_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
 
         <LinearLayout
@@ -44,9 +47,10 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:gravity="center"
-                android:hint="Email"
-                android:singleLine="true"
-                android:ellipsize="start"/>
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:singleLine="true" />
 
 
             <EditText
@@ -54,12 +58,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:singleLine="true"
                 android:ellipsize="start"
                 android:gravity="center"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:lines="1" />
+                android:singleLine="true" />
+
+
+            <TextView
+                android:id="@+id/warning_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/holo_red_light" />
 
 
             <!-- group buttons submit -->
@@ -67,49 +79,56 @@
                 android:id="@+id/button_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-
-                app:bootstrapBrand="warning"
+                android:layout_margin="20dp"
+                app:bootstrapBrand="success"
                 app:bootstrapSize="lg"
                 app:bootstrapText="Login"
                 app:roundedCorners="true" />
 
-            <LinearLayout
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:orientation="horizontal">-->
+
+
+            <!--<com.beardedhen.androidbootstrap.BootstrapButton-->
+            <!--android:id="@+id/button_facebook_login"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:layout_weight="1"-->
+            <!--app:bootstrapBrand="primary"-->
+            <!--app:bootstrapSize="lg"-->
+            <!--app:bootstrapText="Facebook"-->
+            <!--app:roundedCorners="true" />-->
+
+
+            <!--<com.beardedhen.androidbootstrap.BootstrapButton-->
+            <!--android:id="@+id/button_google_login"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:layout_weight="1"-->
+            <!--app:bootstrapBrand="danger"-->
+            <!--app:bootstrapSize="lg"-->
+            <!--app:bootstrapText="Google +"-->
+            <!--app:roundedCorners="true" />-->
+
+            <!--</LinearLayout>-->
+
+            <core.component.UnderlineTextView
+                android:id="@+id/register_link"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-
-                <com.beardedhen.androidbootstrap.BootstrapButton
-                    android:id="@+id/button_facebook_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    app:bootstrapBrand="primary"
-                    app:bootstrapSize="lg"
-                    app:bootstrapText="Facebook"
-                    app:roundedCorners="true" />
-
-
-                <com.beardedhen.androidbootstrap.BootstrapButton
-                    android:id="@+id/button_google_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    app:bootstrapBrand="danger"
-                    app:bootstrapSize="lg"
-                    app:bootstrapText="Google +"
-                    app:roundedCorners="true" />
-
-            </LinearLayout>
-
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Not account yet? Create one"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
 
 
-</LinearLayout>
+</ScrollView>

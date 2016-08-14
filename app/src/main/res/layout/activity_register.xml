@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center"
+        android:padding="5dp"
+        android:layout_weight="1"
+        android:text="@string/invite_tobe_member"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/user_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:hint="First Name"
+                android:lines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/user_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:hint="Last Name"
+                android:lines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/white" />
+
+
+            <EditText
+                android:id="@+id/user_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/user_password_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:hint="Confirmation Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@android:color/white" />
+
+
+            <TextView
+                android:id="@+id/warning_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/holo_red_light" />
+
+
+            <!-- group buttons submit -->
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="lg"
+                app:bootstrapText="Register"
+                app:roundedCorners="true" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

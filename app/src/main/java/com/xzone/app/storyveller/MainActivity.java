@@ -1,6 +1,7 @@
 package com.xzone.app.storyveller;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -8,21 +9,20 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-
 import com.astuetz.PagerSlidingTabStrip;
+
 import core.fragment.NavigationDrawerFragment;
 import core.fragment.StoryFragment;
 import core.fragment.TimelineFragment;
 import core.fragment.TripFragment;
 
-public class MainActivity extends AppCompatActivity implements NavigationDrawerFragment.FragmentDrawerListener{
+public class MainActivity extends AppCompatActivity implements NavigationDrawerFragment.FragmentDrawerListener {
 
     private Toolbar mToolbar;
     private NavigationDrawerFragment drawerFragment;
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //routesLogin();
+        this.overridePendingTransition(R.anim.slide_in_right,
+                R.anim.slide_out_left);
 
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         drawerFragment.setDrawerListener(this);
 
 
-
         // Initialize the ViewPager and set an adapter
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(new TabPagerAdapter(getSupportFragmentManager()));
@@ -59,18 +59,6 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 //        tabs.setTextColor(Color.WHITE);
 
 
-
-
-
-    }
-
-    private void routesLogin(){
-        Intent intent = getIntent();
-
-        if(!intent.getBooleanExtra("login_valid", false)) {
-            Intent intent2 = new Intent(this, LoginActivity.class);
-            startActivity(intent2);
-        }
     }
 
     @Override
@@ -82,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_search:
                 Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
                 break;
@@ -90,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
             case R.id.action_logout:
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
 
@@ -133,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 
     public class TabPagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = { "Trip", "Story" };
+        private final String[] TITLES = {"Trip", "Story"};
 
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -151,11 +140,14 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 
         @Override
         public Fragment getItem(int position) {
-            switch(position){
-                case 0: return new TripFragment();
-                case 1: return new StoryFragment();
+            switch (position) {
+                case 0:
+                    return new TripFragment();
+                case 1:
+                    return new StoryFragment();
 
-                default: return new TripFragment();
+                default:
+                    return new TripFragment();
             }
         }
 

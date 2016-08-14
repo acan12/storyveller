@@ -11,6 +11,8 @@ public class User extends RealmObject {
     @PrimaryKey
     private String email;
 
+    private String passwordSHA;
+    private String loginStatus;
     private String token;
     private String displayName;
     private String uid;
@@ -29,6 +31,21 @@ public class User extends RealmObject {
         return user;
     }
 
+    public String getPasswordSHA() {
+        return passwordSHA;
+    }
+
+    public void setPasswordSHA(String passwordSHA) {
+        this.passwordSHA = passwordSHA;
+    }
+
+    public String getLoginStatus() {
+        return loginStatus;
+    }
+
+    public void setLoginStatus(String loginStatus) {
+        this.loginStatus = loginStatus;
+    }
 
     public String getEmail() {
         return email;

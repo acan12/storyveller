@@ -16,18 +16,56 @@ import okhttp3.Response;
  * Created by arysuryawan on 8/6/16.
  */
 public class Api extends BaseApi{
+
+    // register / reset users
+    private static final String USER_API_URL = "users";
+    private static final String USER_DETAIL_API_URL = "users/{{id}}";
+    private static final String RESET_ACCOUNT_API_URL = "reset";
+    private static final String VERIFY_ACCOUNT_API_URL = "verify/{{token}}";
+
+    // login session
+    private static final String LOGIN_API_URL = "sessions";
+    private static final String LOGOUT_API_URL = "sessions/{{uid}}}";
+
+
+
     private static final String TAG_API = "API: ";
     private static HttpUtilApi api = getHttpUtilApi();
 
 
     /**
+     * REGISTER
+     **/
+    public static void registerUser(String email, String firstname, String lastname, String pass, String passconfirm, Context context, Callback callback) {
+        try {
+            JsonObject subparams = Json.object()
+                    .add("email", email)
+                    .add("first_name", firstname)
+                    .add("last_name", lastname)
+                    .add("password", pass)
+                    .add("password_confirmation", passconfirm);
+
+            JsonObject params = Json.object().add("user", subparams);
+
+            api.call(USER_API_URL, params.toString(), HttpUtilApi.Method.POST, callback);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
      * LOGIN
      **/
-    public static void updateProfile(String name, String token, Context context, Callback callback) {
+    public static void loginUser(String email, String pass, Context context, Callback callback) {
         try {
-            JsonObject params = Json.object().add("name", name);
+            JsonObject subparams = Json.object()
+                    .add("email", email)
+                    .add("password", pass);
 
-            api.call("", params.toString(), HttpUtilApi.Method.POST, callback);
+            JsonObject params = Json.object().add("user", subparams);
+
+            api.call(LOGIN_API_URL, params.toString(), HttpUtilApi.Method.POST, callback);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,6 +75,7 @@ public class Api extends BaseApi{
 
 
     public static class ApiCallback implements Callback {
+
         @Override
         public void onFailure(Call call, IOException e) {
             Log.e(TAG_API, "API failed!!");

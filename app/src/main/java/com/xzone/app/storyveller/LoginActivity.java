@@ -2,10 +2,14 @@ package com.xzone.app.storyveller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.crashlytics.android.Crashlytics;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -15,15 +19,25 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.facebook.stetho.common.ExceptionUtil;
 
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import core.api.Api;
+import core.component.CustomTextWatcher;
+import core.component.FontManager;
+import core.component.ProgressAction;
+import core.component.UnderlineTextView;
 import core.dao.UserDao;
 import core.model.User;
+import io.fabric.sdk.android.Fabric;
+import okhttp3.Call;
+import okhttp3.Response;
 
 /**
  * Created by arysuryawan on 3/30/16.
@@ -32,8 +46,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @BindView(R.id.user_email) EditText userEmail;
     @BindView(R.id.user_password) EditText userPassword;
     @BindView(R.id.button_login) BootstrapButton manualLoginButton;
-    @BindView(R.id.button_facebook_login) BootstrapButton fbLoginButton;
-    @BindView(R.id.button_google_login) BootstrapButton gLoginButton;
+    @BindView(R.id.register_link) UnderlineTextView registerLink;
+    @BindView(R.id.warning_message) TextView warningMessage;
+
+//    @BindView(R.id.button_facebook_login) BootstrapButton fbLoginButton;
+//    @BindView(R.id.button_google_login) BootstrapButton gLoginButton;
 
     @BindView(R.id.facebook_login) LoginButton fblogin;
 
@@ -45,6 +62,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
 
         FacebookSdk.sdkInitialize(this);
         setContentView(R.layout.activity_login_page);
@@ -53,11 +71,34 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
         mCallbackManager = CallbackManager.Factory.create();
 
+        warningMessage.setTypeface(FontManager.getTypeface(this, FontManager.FONTAWESOME));
         manualLoginButton.setOnClickListener(this);
-        fbLoginButton.setOnClickListener(this);
-        gLoginButton.setOnClickListener(this);
+        registerLink.setOnClickListener(this);
 
-        signInFacebook(fblogin);
+//        fbLoginButton.setOnClickListener(this);
+//        gLoginButton.setOnClickListener(this);
+
+//        signInFacebook(fblogin);
+
+        userEmail.addTextChangedListener(customTextWatcher);
+        userPassword.addTextChangedListener(customTextWatcher);
+
+    }
+
+    private void manualSignIn() throws Exception {
+        String email = userEmail.getText().toString();
+        String password = userPassword.getText().toString();
+
+        if(email.equals("ary@gmail.com") && password.equals("120881")){
+            ProgressAction.onProgressStart(10000, this);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+        throw new Exception();
+
+//        Api.loginUser(email, password, this, loginCallback);
     }
 
 
@@ -86,7 +127,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         account.setAvatar(url);
                         account.setProvider("facebook");
 
-                        UserDao.saveUser(account, getApplicationContext());
+                        UserDao.saveUser(account, null, getApplicationContext());
                     }
                 });
                 Bundle parameters = new Bundle();
@@ -113,10 +154,32 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_login:
-                Intent intent = new Intent(this, MainActivity.class);
+                try {
+                    manualSignIn();
+                } catch (Exception e) {
+                    warningMessage.setText(getResources().getString(R.string.invalid_email_or_password));
+                }
+                break;
+
+            case R.id.register_link:
+                Intent intent = new Intent(this, RegisterActivity.class);
                 startActivity(intent);
                 break;
         }
     }
 
+
+
+    private Api.ApiCallback loginCallback = new Api.ApiCallback(){
+        @Override
+        public void onResponse(Call call, Response response) throws IOException {
+            if(response.isSuccessful()){
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }else{
+
+            }
+        }
+    };
 }

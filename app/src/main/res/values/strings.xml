@@ -50,4 +50,10 @@
         <item>Flight</item>
         <item>Boat</item>
     </string-array>
+
+
+    <!-- App -->
+    <!-- general label -->
+    <string name="invalid_email_or_password">invalid email or password &#xf071;</string>
+    <string name="invite_tobe_member">Register</string>
 </resources>

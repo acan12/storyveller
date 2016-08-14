@@ -16,7 +16,7 @@ import okhttp3.Response;
 public class BaseApi {
     private static HttpUtilApi httpUtilApi;
 
-    protected static final String API_DOMAIN_URL = "http://128.199.98.84/api/";
+    protected static final String API_DOMAIN_URL = "http://128.199.98.84/api/v1/";
 
 
     protected static HttpUtilApi getHttpUtilApi() {
@@ -32,7 +32,6 @@ public class BaseApi {
 
         private Call call;
         private Request request;
-        private Response response;
         private RequestBody body;
         private StringBuffer result;
 

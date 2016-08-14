@@ -45,6 +45,14 @@
             android:name=".MainActivity"
             android:label="Home"></activity>
 
+        <activity android:name=".RegisterActivity"
+            android:label="Register"
+            android:parentActivityName=".LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
+        </activity>
+
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -95,6 +103,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TimelineDetailActivity" />
         </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="3fe0571ed0dae567857bad9f16a5046204fd005e" />
 
 
     </application>
