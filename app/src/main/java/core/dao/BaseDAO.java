@@ -10,10 +10,10 @@ import io.realm.RealmResults;
 /**
  * Created by arysuryawan on 6/24/16.
  */
-public class BaseDao {
+public class BaseDAO {
     protected static Realm realm;
 
-    protected BaseDao(Context context) {
+    protected BaseDAO(Context context) {
         setupRealm(context);
     }
 

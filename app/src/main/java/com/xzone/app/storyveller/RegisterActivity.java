@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 import core.api.Api;
 import core.component.FontManager;
 import core.component.ProgressAction;
-import core.dao.UserDao;
+import core.dao.UserDAO;
 import core.parser.UserParser;
 import core.util.SecurityUtil;
 import okhttp3.Call;
@@ -68,7 +68,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     return;
                 }
 
-                UserDao.deleteUser(this); // delete user
+                UserDAO.deleteUser(this); // delete user
 
                 Api.registerUser(email, firstname, lastname, password, passwordConfirm, this, callbackRegister);
                 ProgressAction.onProgressStart(10000, this);

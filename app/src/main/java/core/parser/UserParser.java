@@ -6,7 +6,7 @@ import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
 
 import core.IConfig;
-import core.dao.UserDao;
+import core.dao.UserDAO;
 import core.model.User;
 import core.util.PreferenceUtil;
 
@@ -35,7 +35,7 @@ public class UserParser extends BaseParser {
         user.setAvatar(avatar);
 
         String password = PreferenceUtil.getPreferenceString(IConfig.USER_PASSWORD_KEY, context);
-        UserDao.saveUser(user, password, context);
+        UserDAO.saveUser(user, password, context);
 
     }
 }

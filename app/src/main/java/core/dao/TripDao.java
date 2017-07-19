@@ -5,7 +5,7 @@ import android.content.Context;
 /**
  * Created by arysuryawan on 8/6/16.
  */
-public class TripDao extends BaseDao {
+public class TripDao extends BaseDAO {
     protected TripDao(Context context) {
         super(context);
     }

@@ -9,14 +9,14 @@ import core.util.SecurityUtil;
 /**
  * Created by arysuryawan on 6/24/16.
  */
-public class UserDao extends BaseDao {
+public class UserDAO extends BaseDAO {
 
-    protected UserDao(Context context) {
+    protected UserDAO(Context context) {
         super(context);
     }
 
-    public static UserDao instanceObject(Context context) {
-        return new UserDao(context);
+    public static UserDAO instanceObject(Context context) {
+        return new UserDAO(context);
     }
 
     public static void saveUser(User user, String password, Context context){

@@ -5,7 +5,7 @@ import android.content.Context;
 /**
  * Created by arysuryawan on 8/6/16.
  */
-public class ItienaryDao extends BaseDao {
+public class ItienaryDao extends BaseDAO {
     protected ItienaryDao(Context context) {
         super(context);
     }

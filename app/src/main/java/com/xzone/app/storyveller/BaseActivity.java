@@ -1,7 +1,6 @@
 package com.xzone.app.storyveller;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -10,12 +9,9 @@ import android.widget.TextView;
 import com.crashlytics.android.Crashlytics;
 import com.facebook.FacebookSdk;
 
-import org.w3c.dom.Text;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import core.component.CustomTextWatcher;
-import core.dao.UserDao;
+import core.dao.UserDAO;
 import core.model.User;
 import io.fabric.sdk.android.Fabric;
 
@@ -30,7 +26,7 @@ public class BaseActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(activity);
 
 
-        User user = UserDao.getUser(this);
+        User user = UserDAO.getUser(this);
         if(user.isLoginStatus()){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);

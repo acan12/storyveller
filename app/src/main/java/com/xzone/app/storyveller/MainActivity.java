@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 
-import core.dao.UserDao;
+import core.dao.UserDAO;
 import core.fragment.NavigationDrawerFragment;
 import core.fragment.StoryFragment;
 import core.fragment.TimelineFragment;
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
                 break;
 
             case R.id.action_logout:
-                UserDao.addLoginStatus(false, getApplicationContext()); // set loginstatus to false
+                UserDAO.addLoginStatus(false, getApplicationContext()); // set loginstatus to false
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 finish();

@@ -2,24 +2,19 @@ package com.xzone.app.storyveller;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
-import com.crashlytics.android.Crashlytics;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.facebook.stetho.common.ExceptionUtil;
 
 import org.json.JSONObject;
 
@@ -29,13 +24,11 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import core.api.Api;
-import core.component.CustomTextWatcher;
 import core.component.FontManager;
 import core.component.ProgressAction;
 import core.component.UnderlineTextView;
-import core.dao.UserDao;
+import core.dao.UserDAO;
 import core.model.User;
-import io.fabric.sdk.android.Fabric;
 import okhttp3.Call;
 import okhttp3.Response;
 
@@ -89,11 +82,15 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         String email = userEmail.getText().toString();
         String password = userPassword.getText().toString();
 
-        User user = UserDao.getUser(this);
-        if(user.getEmail().equals(email) && UserDao.isPasswordMatch(password, this)){
+        User user = UserDAO.getUser(this);
+        if(true){
+//        if(user.getEmail().equals(email) && UserDAO.isPasswordMatch(password, this)){
 
-            Api.loginUser(email, password, this, loginCallback);
+//            Api.loginUser(email, password, this, loginCallback);
             ProgressAction.onProgressStart(10000, this);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
 
             return;
         }
@@ -128,7 +125,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         account.setAvatar(url);
                         account.setProvider("facebook");
 
-                        UserDao.saveUser(account, null, getApplicationContext());
+                        UserDAO.saveUser(account, null, getApplicationContext());
                     }
                 });
                 Bundle parameters = new Bundle();
@@ -176,7 +173,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         public void onResponse(Call call, Response response) throws IOException {
             if(response.isSuccessful()){
 
-                UserDao.addLoginStatus(true, getApplicationContext()); // set loginstatus to true
+                UserDAO.addLoginStatus(true, getApplicationContext()); // set loginstatus to true
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
